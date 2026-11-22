@@ -14,10 +14,15 @@ yarn-error.log*
 *.zip
 *.tar.gz
 
-# Design and internship documentation package (kept separate)
-ShiftRelay_Documentation/
+# Design, diagrams, and internship report materials (kept separate from application repository)
+design/
+diagrams/
+screenshots/
 documentation/
+ShiftRelay_Documentation/
 
 # Environment & local settings
 .env
 .env.local
+.vscode/
+.idea/

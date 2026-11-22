@@ -1,187 +1,167 @@
-# ShiftRelay — Shift Continuity System
+# ShiftRelay
 
-> **Every shift connected. Nothing left behind.**  
-> *Never drop the baton.*
+> **Never drop the baton between shifts.**
 
-ShiftRelay is an operational shift handover and custody continuity system built with vanilla modern HTML5, CSS3 (Design Tokens), and ES-Module JavaScript. It features client-side History API routing, resilient LocalStorage persistence, a public product showcase landing page, a dedicated 5-milestone interactive demonstration sandbox, and the signature **Continuity Engine**.
-
-Zero frameworks, zero external build dependencies, 100% standards-compliant.
+ShiftRelay is a high-reliability Single Page Application (SPA) designed for 24/7 operational facilities (manufacturing plants, logistics hubs, command centers, healthcare operations) to manage shift transitions, enforce custody handovers, and ensure uninterrupted operational continuity.
 
 ---
 
-## 🚀 Quick Start
+## 📌 Problem Statement
 
-Run either the included SPA-aware Python or Node.js server (zero dependencies required):
+In continuous 24/7 operations, the shift changeover is the most vulnerable point for operational failure:
+- **Fragmented Communication**: Shift notes are frequently scattered across disconnected spreadsheets, paper logbooks, and chat threads.
+- **Unresolved Task Blind Spots**: In-progress tasks often get lost in the transition, leading to dropped balls, missed SLAs, or duplicate work.
+- **Lost Incident Context**: Critical safety or equipment anomalies reported during an outgoing shift fail to transfer with their full investigation history.
+- **Unclear Accountability**: Without structured, recorded mutual sign-offs, incoming teams can inherit unknown risks without explicit acknowledgement.
 
-```bash
-# Option A: Python server
-python server.py
+ShiftRelay eliminates these vulnerabilities by transforming informal shift handovers into a verifiable, structured custody transition process.
 
-# Option B: Node.js server
-node server.js
+---
+
+## ✨ Key Features
+
+All features listed below are fully implemented:
+
+- **Operational Dashboard**: Real-time telemetry displaying active shifts, pending handovers awaiting sign-off, open task monitors, critical incident tallies, and continuity risk summaries.
+- **Shift Management**: Full schedule lifecycle management with department categorization, timing configuration, employee assignments, and shift overlap collision detection.
+- **Structured Handover Management**: Formal 4-stage handover lifecycle (`Draft` $\to$ `Submitted` $\to$ `Awaiting Acknowledgement` $\to$ `Acknowledged`) with automated item aggregation, important updates, and checklist verification.
+- **Task Management**: Task tracking categorized by priority (`Low`, `Medium`, `High`, `Critical`), department, assignee, and target shift. Includes automated tracking of cumulative shift carry-overs.
+- **Incident Anomaly Log**: Severity-tiered incident tracking (`Low`, `Medium`, `High`, `Critical`) with mandatory resolution notes enforced before an incident can be closed.
+- **The Continuity Engine**:
+  - **Primary Record ID Preservation**: Carried items strictly retain their original database identifiers (`TK-1001`, `IN-2001`) across rollovers.
+  - **Concurrent Conflict Detection**: Automatically detects mid-flight task reassignments that occur while a handover draft is in review, preserving the newest assignment safely.
+  - **Repeat-Risk Telemetry**: Open items carried across two or more shifts ($\ge 2$ rollovers) automatically escalate to the repeat risk monitor.
+  - **Closed Shift Attribution**: Records the exact shift during which a task or incident was closed (`closedShift`).
+- **Interactive Guided Demonstration**: In-memory, 5-milestone interactive walkthrough (`/demo`) showing outgoing queue inspection, handover drafting, conflict simulation, incoming mutual sign-off, and continuity auditing without mutating production data.
+- **Unified Activity Stream**: Chronological system audit log recording status transitions, reassignments, incident closures, and handover sign-offs.
+- **Light and Dark Themes**: High-contrast, theme-aware user interface with seamless theme toggling and persistent user preference storage.
+- **Fully Responsive Interface**: Tailored layout adaptations for desktops (>1024px with fixed sidebar), tablets (768px–1024px with 280px drawer), and mobile phones ($\le 480$px with single-column collapse and touch-friendly targets).
+- **Resilient Local Data Persistence**: Client-side storage layer featuring self-healing schema repair, automatic fallback upon corrupted JSON data, legacy key migration, and quota exception trapping.
+
+---
+
+## 🛠️ Technology Stack
+
+ShiftRelay is built with zero external framework dependencies:
+
+- **Frontend Core**: Vanilla JavaScript (ES2022+ Native ES-Modules), semantic HTML5, and CSS3 using custom properties (Design Tokens).
+- **Icons**: Lucide Icons (vanilla browser script with inline SVG fallbacks).
+- **Client-Side Routing**: Vanilla HTML5 History API router (`pushState`, `popstate`) with path normalization and 404 recovery.
+- **Persistence**: Browser Web Storage API (`localStorage`) with relational schema validation.
+- **Runtime Servers**: 
+  - Node.js (Built-in `http`, `fs`, `path` modules)
+  - Python 3 (Built-in `http.server` with custom SPA request handler)
+- **Automated Test Suite**: Custom zero-dependency ES-Module test runner executing 11 isolated test suites (312 assertions).
+
+---
+
+## 📂 Project Structure
+
+```
+shiftrelay/
+├── .gitignore             # Git ignore rules
+├── README.md              # Project documentation
+├── index.html             # Single Page Application entry point
+├── package.json           # Project manifest, start & test scripts
+├── server.js              # Native Node.js SPA-aware HTTP server
+├── server.py              # Native Python 3 SPA-aware HTTP server
+├── assets/                # Application runtime assets
+│   └── logo.svg           # Vector brand logo
+├── css/                   # Design token stylesheets
+│   └── main.css           # Theme variables, responsive layout & typography
+├── js/                    # Native ES-Modules
+│   ├── app.js             # Router, event delegation & application bootstrap
+│   ├── brand.js           # Dynamic SVG brand generators
+│   ├── demo-store.js      # Isolated in-memory state for interactive demo
+│   ├── demo-view.js       # 5-milestone guided demonstration views
+│   ├── landing-view.js    # Public product showcase landing view
+│   ├── store.js           # Continuity Engine, relational state & storage
+│   ├── ui.js              # Toast notifications & UI helpers
+│   └── views.js           # Operational workspace views (Dashboard, CRUD forms)
+└── tests/                 # Automated test suite (11 suites, 312 assertions)
+    ├── package.json       # Test runner configuration
+    ├── test_all_handlers.mjs
+    ├── test_check.mjs
+    ├── test_comprehensive_frontend.mjs
+    ├── test_deep_frontend.mjs
+    ├── test_full_suite.mjs
+    ├── test_handler.mjs
+    ├── test_routes.mjs
+    ├── test_server.mjs
+    ├── test_server.py
+    ├── test_storage.js
+    ├── test_suite.js
+    ├── test_theme_and_phone.mjs
+    └── test_theme_and_profile.mjs
 ```
 
-Then navigate in your browser to:
+---
+
+## 🚀 Running Locally
+
+Because ShiftRelay uses native ES-Modules and the HTML5 History API for clean URLs (e.g. `/app/dashboard`, `/demo`), files must be served over an HTTP server rather than loaded directly via `file://`.
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18+) **OR** [Python 3](https://www.python.org/) (3.8+)
+- A modern web browser (Chrome, Edge, Firefox, Safari)
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/prashansaraut/shiftrelay.git
+cd shiftrelay
+```
+
+### 2. Start the Local Server
+
+**Option A — Using Node.js (Recommended):**
+```bash
+npm start
+# or: node server.js
+```
+
+**Option B — Using Python 3:**
+```bash
+python server.py
+```
+
+### 3. Open in Browser
+Open your browser and navigate to:
 ```
 http://localhost:8000
 ```
 
-Both `server.py` and `server.js` serve `index.html` for any client-side SPA route, enabling direct URL navigation (e.g. `/app/dashboard`, `/demo`, `/app/tasks/TK-1001`) and page reloads without 404 errors. Any standard static file server (`npx serve -s .`) is also fully supported.
+Both included servers automatically serve `index.html` for deep client-side routes, allowing page reloads and direct navigation to any URL.
 
 ---
 
-## 🗺️ Route Architecture
+## 🧪 Running the Test Suite
 
-ShiftRelay cleanly separates the public marketing experience, the interactive demonstration, and the operational workspace while maintaining backward compatibility with legacy bookmarks:
-
-### 1. Public & Demonstration Routes
-* `/` — **Public Landing Page**: Split-layout hero with live handover interface preview, problem vs. solution breakdown, 5-stage operational workflow diagram, Continuity Engine showcase, feature catalog, and call-to-actions.
-* `/demo` — **Interactive Demonstration**: A 5-milestone guided simulation running on an **isolated in-memory sandbox** (never modifies production LocalStorage records). Allows prospective users to inspect an outgoing shift, draft a handover, trigger a simulated shift conflict, experience incoming sign-off, and verify the post-handover audit trail.
-
-### 2. Operational Workspace Routes (`/app/*`)
-* `/app/dashboard` — Live operations dashboard with reactive statistics, active shift summary, continuity risk monitors ($\ge 2$ repeat carries, overdue tasks, critical incidents), and recent timeline.
-* `/app/shifts` — Shift schedule management, staffing assignments, and time-overlap validation.
-* `/app/shifts/:id` — Shift detail view with active tasks, incidents, and carry-forward eligibility.
-* `/app/handovers` — Shift handover index with status filters (`Draft`, `Submitted`, `Awaiting Acknowledgement`, `Acknowledged`).
-* `/app/handovers/new` — Prepare handover form with automated Continuity Engine item aggregation.
-* `/app/handovers/:id` — Detailed handover sign-off portal with mutual review checklists and conflict notices.
-* `/app/tasks` — Task management, priority bars, due-date tracking, and carry-forward counts.
-* `/app/tasks/:id` — Task detail view with immutable audit history.
-* `/app/incidents` — Severity-tiered incident management (`Critical`, `High`, `Medium`, `Low`) requiring mandatory resolution notes.
-* `/app/incidents/:id` — Incident detail view with resolution notes and department origin.
-* `/app/activity` — Unified operational timeline of all shift activities, reassignments, and handovers.
-* `/app/settings` — Simulated role switcher (`Operations Manager`, `Outgoing Shift Employee`, `Incoming Shift Employee`), workplace taxonomy configuration, and clean baseline reset.
-* `/app/search` — Global omnisearch across tasks, incidents, handovers, and shifts.
-
-### 3. Legacy Redirects (Preserving Existing Bookmarks)
-All previous legacy routes (such as `/dashboard`, `/shifts`, `/handovers`, `/tasks`, `/incidents`, `/activity`, `/settings`) automatically redirect to `/app/...` transparently without breaking user flow.
-
----
-
-## ⚙️ The Continuity Engine (`js/store.js`)
-
-The Continuity Engine is ShiftRelay's deterministic state machine governing the transfer of operational custody between shifts:
-
-1. **Automatic Item Aggregation Without Record Cloning**:
-   `prepare(fromShift, toShift)` gathers unresolved tasks and incidents from the outgoing shift. Items are referenced by their original record IDs (`TK-xxxx`, `IN-xxxx`). Records are **never** cloned or duplicated.
-2. **Duplicate & Stale Prevention**:
-   Validates that both shift IDs exist, enforces that the incoming shift differs from the outgoing shift, and prevents duplicate active handovers for the same shift pair.
-3. **Concurrent Conflict Detection**:
-   If an operator reassigns a task's shift in the background while a handover is awaiting sign-off, the Continuity Engine detects the conflict during acknowledgement. It **never** silently overwrites the newer shift assignment, safely preserving both the new assignment and the audit record.
-4. **Traceable Carry-Forward Provenance**:
-   When acknowledged by the incoming supervisor:
-   - Tasks are marked `Carried Forward`.
-   - The cumulative carry counter (`carry`) increments. Items carried $\ge 2$ times automatically escalate on the dashboard as repeat continuity risks.
-   - History logs the exact transfer: `"Carried forward from Morning Shift to Evening Shift via HO-xxxx"`.
-5. **Closed-Shift Provenance**:
-   - Resolving or closing an incident mandates non-empty resolution notes.
-   - The closing shift is permanently recorded in `closedShift`.
-   - Reopening an item safely clears `closedShift` to prevent stale closure data.
-
----
-
-## 🛡️ Reliability & LocalStorage Resilience
-
-- **Schema Validation & Self-Healing**: Validates all collections (`shifts`, `tasks`, `incidents`, `handovers`, `employees`, `config`, `activity`) on startup. If data is corrupted or incomplete, it falls back gracefully without crashing.
-- **Seamless Data Migration**: Automatically migrates stored records from the legacy storage key (`handoverhq.v1`) to the new key (`shiftrelay.v1`) without data loss.
-- **Quota Error Handling**: `save()` catches storage exceptions and dispatches user notifications rather than failing silently.
-- **Sandboxed Demonstration State**: The `/demo` route operates purely on an in-memory store (`js/demo-store.js`), guaranteeing that testing does not pollute or overwrite production records.
-
----
-
-## 📁 Project Structure
-
-```
-├── index.html                   # Application shell with dual layout (Public & Workspace)
-├── css/
-│   └── main.css                 # ShiftRelay design system, tokens, landing page & responsive rules
-├── js/
-│   ├── app.js                   # Client-side router, layout mode switching, event delegation
-│   ├── brand.js                 # Distinctive SVG logo mark, wordmark, and favicon definitions
-│   ├── demo-store.js            # Isolated in-memory state engine for /demo
-│   ├── demo-view.js             # 5-milestone interactive demo walkthrough controller
-│   ├── landing-view.js          # Public commercial SaaS landing page controller
-│   ├── store.js                 # Production store, Continuity Engine, and LocalStorage persistence
-│   ├── ui.js                    # UI helpers: escaping, badges, toasts, dialogs, icons
-│   └── views.js                 # Workspace controllers, schema-driven forms, and legacy redirects
-├── assets/
-│   └── logo.svg                 # Precision vector brand emblem
-├── design/
-│   ├── FIGMA-IMPORT-GUIDE.md    # Guide to importing vectors and tokens into Figma
-│   ├── design-system/
-│   │   ├── design-tokens.json   # Full W3C/Figma-compliant design token specification
-│   │   └── design-system-spec.svg # Visual vector artboard of tokens, scales & components
-│   ├── wireframes/              # Low-fidelity vector blueprints
-│   │   ├── wf-landing-desktop.svg
-│   │   ├── wf-landing-mobile.svg
-│   │   ├── wf-demo-milestones.svg
-│   │   ├── wf-workspace-dashboard.svg
-│   │   ├── wf-workspace-handovers.svg
-│   │   └── wf-workspace-tasks.svg
-│   └── high-fidelity/           # Production-ready vector mockups
-│       ├── hifi-landing-desktop.svg
-│       ├── hifi-landing-mobile.svg
-│       ├── hifi-dashboard-desktop.svg
-│       ├── hifi-demo-desktop.svg
-│       └── hifi-handover-detail.svg
-├── diagrams/                    # System diagrams in both editable .mmd and vector .svg
-│   ├── system-architecture.mmd / .svg
-│   ├── continuity-engine-workflow.mmd / .svg
-│   ├── application-workflow.mmd / .svg
-│   ├── spa-routing.mmd / .svg
-│   └── data-relationship-er.mmd / .svg
-├── documentation/
-│   ├── technical-report.md      # Comprehensive 32-section academic / enterprise report
-│   ├── requirements-compliance.md # Formal Week 5 criteria compliance matrix
-│   ├── test-plan.md             # 8-viewport testing plan & strategy
-│   └── test-results.md          # 36-scenario test execution table (100% passed)
-├── screenshots/                 # Captured responsive UI layouts & viewports
-│   ├── landing/                 # Desktop & mobile landing layouts
-│   ├── demo/                    # Demo milestone interactive states
-│   ├── workspace/               # Dashboard layouts at 1280px & 768px
-│   └── responsive/              # 8 verified viewport captures (320px to 1280px)
-├── server.py                    # Zero-dependency Python SPA development server
-└── server.js                    # Zero-dependency Node.js SPA development server
-```
-
----
-
-## 🧪 Verification & Testing
-
-ShiftRelay includes a comprehensive, reproducible automated test suite with zero external dependencies. All 11 suites execute in isolated Node.js child processes.
-
-### Single Run Command
+ShiftRelay includes a comprehensive automated test suite with 100% pass coverage across 312 assertions:
 
 ```bash
 npm test
+# or: node tests/test_full_suite.mjs
 ```
 
-*(Alternatively, run directly with Node: `node tests/test_full_suite.mjs`)*
+---
 
-### Test Coverage Highlights
-- **Continuity Engine & Provenance**: Duplicate open handover rejection, conflict detection on reassignment, shift overlap validation, and repeated rollover risks ($\ge 2$ carries).
-- **LocalStorage Resilience**: Fallback to clean seed data on corrupted JSON (`"{"`), automatic schema repair of missing `handovers` array while preserving user tasks, legacy data migration (`handoverhq.v1` $\to$ `shiftrelay.v1`) with zero data loss, and safe quota handling.
-- **Client-Side Routing & View Handlers**: Regex verification and execution of all 46 route patterns across landing, demo, and workspace modules.
-- **HTTP Server**: Static MIME delivery, SPA route fallbacks, and nested asset path resolution over ephemeral TCP sockets.
-- **Responsive Architecture**: Breakpoint safety (480px, 768px, 1024px, 1280px), off-canvas mobile drawer, theme contrast, and horizontal overflow protection.
+## ⚠️ Limitations
 
-### Manual Verification Checklist
+- **Frontend Demonstration**: ShiftRelay is designed as an architectural frontend demonstration. It uses browser-based `localStorage` for persistence rather than a remote database server.
+- **Simulated Roles**: Role switching (Operations Manager, Outgoing Shift Employee, Incoming Shift Employee) is provided via an interactive switcher to simulate distinct operator workflows without requiring a production backend identity provider (IdP).
+- **Single-Client Isolation**: State changes made in one browser instance persist locally to that browser's LocalStorage and do not broadcast across multiple physical devices in real time.
 
-To test the application locally in the browser:
+---
 
-1. **Syntax Checks**: Run `node -c js/*.js` to verify ES-module syntax integrity across all JavaScript files.
-2. **Local Server Execution**: Start `python server.py` and open `http://localhost:8000`.
-3. **Verify Public Landing Page**:
-   - Verify split-layout hero, typography, CTAs, product interface mockup, workflow diagrams, and feature sections.
-4. **Verify Interactive Demo (`/demo`)**:
-   - Step 1: Inspect Morning Shift open tasks and repeat risk flag on `TK-1003`.
-   - Step 2: Prepare handover; verify completed task `TK-1004` is excluded.
-   - Step 3: Trigger background conflict simulation (reassigns `TK-1002` to Night Shift).
-   - Step 4: Toggle review checkbox and acknowledge handover.
-   - Step 5: Verify Continuity Engine conflict resolution notice, preserved IDs, incremented carry counts, and audit trail. Verify that LocalStorage remains untouched.
-5. **Verify Workspace Functionality (`/app/dashboard`)**:
-   - Verify Carried Forward metric tallies both tasks and incidents.
-   - Verify repeat risks calculation ($\ge 2$ carries).
-   - Test task status transitions (cannot manually set `Carried Forward`; reopening completed task clears `closedShift`).
-   - Test incident status transitions (mandatory resolution notes; distinguished "resolved" vs "closed" activity logs).
-   - Test legacy redirects (`/dashboard` -> `/app/dashboard`, etc.).
+## 🔮 Future Scope
+
+- **Backend API & Database Integration**: Transitioning state persistence from LocalStorage to a PostgreSQL / Supabase backend with RESTful/GraphQL endpoints.
+- **Multi-Tenant Authentication & RBAC**: Real authentication (OAuth2 / OpenID Connect) with role-based access control for operators, supervisors, and administrators.
+- **Real-Time WebSocket Sync**: Live multi-operator updates using WebSockets or Server-Sent Events (SSE) for concurrent handover collaboration.
+- **Hardware & IoT Telemetry**: Direct integration with industrial PLC/SCADA systems to auto-populate equipment incident logs during handovers.
+
+---
+
+## 📄 License
+
+ShiftRelay is an open-source educational and portfolio software engineering project.
