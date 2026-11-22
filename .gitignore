@@ -16,6 +16,7 @@ yarn-error.log*
 
 # Design and internship documentation package (kept separate)
 ShiftRelay_Documentation/
+documentation/
 
 # Environment & local settings
 .env
