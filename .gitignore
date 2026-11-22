@@ -14,6 +14,9 @@ yarn-error.log*
 *.zip
 *.tar.gz
 
+# Design and internship documentation package (kept separate)
+ShiftRelay_Documentation/
+
 # Environment & local settings
 .env
 .env.local
