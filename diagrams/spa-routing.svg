@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="600" viewBox="0 0 1000 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>ShiftRelay SPA Routing Architecture</title>
+  <style>
+    .font-sans { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+    .font-body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <rect width="1000" height="600" fill="#F8FAFC"/>
+  
+  <!-- Diagram Header -->
+  <rect x="30" y="30" width="940" height="70" rx="10" fill="#0F172A"/>
+  <text x="50" y="72" fill="#FFFFFF" font-size="22" font-weight="800" class="font-sans">Single Page Application (SPA) Routing &amp; Lifecycle</text>
+
+  <!-- Flow Grid -->
+  <g transform="translate(50, 130)">
+    <!-- Column 1: Server Fallback -->
+    <rect x="0" y="0" width="270" height="400" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <rect x="0" y="0" width="270" height="45" rx="10" fill="#F1F5F9"/>
+    <text x="20" y="28" fill="#0F172A" font-size="14" font-weight="700" class="font-sans">1. Deep Direct URL / Refresh</text>
+    
+    <g transform="translate(15, 60)">
+      <rect x="0" y="0" width="240" height="55" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="10" y="22" fill="#0F172A" font-size="11" font-weight="700" class="font-mono">GET /app/tasks/TK-1001</text>
+      <text x="10" y="42" fill="#64748B" font-size="11" class="font-body">Browser initiates HTTP request</text>
+
+      <rect x="0" y="70" width="240" height="75" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <text x="10" y="92" fill="#1E40AF" font-size="11" font-weight="700" class="font-mono">SPA Server Fallback</text>
+      <text x="10" y="112" fill="#1E3A8A" font-size="11" class="font-body">Checks: Is path a static file?</text>
+      <text x="10" y="130" fill="#1E3A8A" font-size="11" class="font-body">No ➔ Serves index.html (200 OK)</text>
+
+      <rect x="0" y="160" width="240" height="60" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+      <text x="10" y="182" fill="#059669" font-size="11" font-weight="700" class="font-mono">Zero 404 on Refresh</text>
+      <text x="10" y="202" fill="#047857" font-size="11" class="font-body">Works on python and node servers</text>
+    </g>
+
+    <!-- Column 2: Client Router -->
+    <rect x="315" y="0" width="270" height="400" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <rect x="315" y="0" width="270" height="45" rx="10" fill="#F1F5F9"/>
+    <text x="335" y="28" fill="#0F172A" font-size="14" font-weight="700" class="font-sans">2. Route Normalization</text>
+    
+    <g transform="translate(330, 60)">
+      <rect x="0" y="0" width="240" height="65" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="10" y="22" fill="#0F172A" font-size="11" font-weight="700" class="font-mono">normalizePath()</text>
+      <text x="10" y="40" fill="#64748B" font-size="11" class="font-body">Strips subfolders, handles file://,</text>
+      <text x="10" y="55" fill="#64748B" font-size="11" class="font-body">handles hash #/ fallback</text>
+
+      <rect x="0" y="80" width="240" height="75" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <text x="10" y="102" fill="#1E40AF" font-size="11" font-weight="700" class="font-mono">Regex Matcher</text>
+      <text x="10" y="122" fill="#1E3A8A" font-size="11" class="font-body">Extracts named groups: :id</text>
+      <text x="10" y="140" fill="#1E3A8A" font-size="11" class="font-body">e.g. groups.id = 'TK-1001'</text>
+
+      <rect x="0" y="170" width="240" height="55" rx="6" fill="#FFFBEB" stroke="#FDE68A"/>
+      <text x="10" y="192" fill="#D97706" font-size="11" font-weight="700" class="font-mono">Legacy Redirects</text>
+      <text x="10" y="212" fill="#92400E" font-size="11" class="font-body">/tasks ➔ /app/tasks</text>
+    </g>
+
+    <!-- Column 3: History & DOM -->
+    <rect x="630" y="0" width="270" height="400" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <rect x="630" y="0" width="270" height="45" rx="10" fill="#F1F5F9"/>
+    <text x="650" y="28" fill="#0F172A" font-size="14" font-weight="700" class="font-sans">3. History API &amp; DOM Update</text>
+
+    <g transform="translate(645, 60)">
+      <rect x="0" y="0" width="240" height="65" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="10" y="22" fill="#0F172A" font-size="11" font-weight="700" class="font-mono">pushState() Navigation</text>
+      <text x="10" y="40" fill="#64748B" font-size="11" class="font-body">Intercepts &lt;a data-link&gt;</text>
+      <text x="10" y="55" fill="#64748B" font-size="11" class="font-body">Zero full-page reloads</text>
+
+      <rect x="0" y="80" width="240" height="65" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="10" y="102" fill="#0F172A" font-size="11" font-weight="700" class="font-mono">popstate Listener</text>
+      <text x="10" y="122" fill="#64748B" font-size="11" class="font-body">Handles Browser Back &amp; Forward</text>
+      <text x="10" y="137" fill="#64748B" font-size="11" class="font-body">Re-renders view instantly</text>
+
+      <rect x="0" y="160" width="240" height="65" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+      <text x="10" y="182" fill="#059669" font-size="11" font-weight="700" class="font-mono">Selective View Re-render</text>
+      <text x="10" y="202" fill="#047857" font-size="11" class="font-body">Only updates #view, #title</text>
+      <text x="10" y="217" fill="#047857" font-size="11" class="font-body">Icons hydrated via Lucide</text>
+    </g>
+  </g>
+
+</svg>

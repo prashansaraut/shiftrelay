@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="800" viewBox="0 0 1000 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>ShiftRelay Continuity Engine Workflow</title>
+  <style>
+    .font-sans { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+    .font-body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <rect width="1000" height="800" fill="#F8FAFC"/>
+  
+  <!-- Diagram Header -->
+  <rect x="30" y="30" width="940" height="70" rx="10" fill="#0F172A"/>
+  <text x="50" y="72" fill="#FFFFFF" font-size="22" font-weight="800" class="font-sans">Continuity Engine — Lifecycle &amp; Conflict Management Workflow</text>
+
+  <!-- Step Boxes -->
+  <g transform="translate(50, 130)">
+    <!-- Step 1 -->
+    <rect x="0" y="0" width="260" height="110" rx="8" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <rect x="0" y="0" width="6" height="110" rx="3" fill="#2563EB"/>
+    <text x="20" y="30" fill="#0F172A" font-size="14" font-weight="700" class="font-sans">1. Shift Work &amp; Logging</text>
+    <text x="20" y="52" fill="#64748B" font-size="12" class="font-body">Outgoing shift staff logs tasks</text>
+    <text x="20" y="70" fill="#64748B" font-size="12" class="font-body">and reports incidents.</text>
+    <text x="20" y="92" fill="#2563EB" font-size="11" font-weight="600" class="font-mono">Original IDs Assigned</text>
+
+    <!-- Arrow -->
+    <line x1="260" y1="55" x2="310" y2="55" stroke="#94A3B8" stroke-width="2"/>
+    <polygon points="310,55 302,50 302,60" fill="#94A3B8"/>
+
+    <!-- Step 2 -->
+    <rect x="320" y="0" width="280" height="110" rx="8" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <rect x="320" y="0" width="6" height="110" rx="3" fill="#2563EB"/>
+    <text x="340" y="30" fill="#1E40AF" font-size="14" font-weight="700" class="font-sans">2. Engine Aggregation</text>
+    <text x="340" y="52" fill="#1E3A8A" font-size="12" class="font-body">• Validates from/to shift IDs</text>
+    <text x="340" y="70" fill="#1E3A8A" font-size="12" class="font-body">• Excludes closed / completed items</text>
+    <text x="340" y="92" fill="#059669" font-size="11" font-weight="700" class="font-mono">No Clone / Reference Copy Only</text>
+
+    <!-- Arrow -->
+    <line x1="600" y1="55" x2="650" y2="55" stroke="#94A3B8" stroke-width="2"/>
+    <polygon points="650,55 642,50 642,60" fill="#94A3B8"/>
+
+    <!-- Step 3 -->
+    <rect x="660" y="0" width="240" height="110" rx="8" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <rect x="660" y="0" width="6" height="110" rx="3" fill="#D97706"/>
+    <text x="680" y="30" fill="#0F172A" font-size="14" font-weight="700" class="font-sans">3. Structured Draft</text>
+    <text x="680" y="52" fill="#64748B" font-size="12" class="font-body">Draft ➔ Submitted</text>
+    <text x="680" y="70" fill="#64748B" font-size="12" class="font-body">➔ Awaiting Sign-off</text>
+    <text x="680" y="92" fill="#D97706" font-size="11" font-weight="600" class="font-mono">Locked During Review</text>
+  </g>
+
+  <!-- Big Middle Stage: Conflict & Acknowledgement -->
+  <g transform="translate(50, 270)">
+    <rect x="0" y="0" width="900" height="230" rx="10" fill="#F8FAFC" stroke="#CBD5E1"/>
+    <text x="30" y="35" fill="#0F172A" font-size="16" font-weight="700" class="font-sans">4. Concurrency Conflict Detection &amp; Custody Acknowledgement</text>
+    
+    <!-- Conflict Handling Block -->
+    <rect x="30" y="60" width="400" height="140" rx="8" fill="#FFFBEB" stroke="#FDE68A"/>
+    <text x="50" y="90" fill="#B45309" font-size="14" font-weight="700" class="font-sans">Conflict Detection Algorithm</text>
+    <text x="50" y="115" fill="#92400E" font-size="12" class="font-body">Was task shiftId altered after handover creation?</text>
+    <text x="50" y="135" fill="#92400E" font-size="12" class="font-body">➔ DO NOT OVERWRITE new shift assignment.</text>
+    <text x="50" y="155" fill="#92400E" font-size="12" class="font-body">➔ Log conflict notice in handover conflictLog.</text>
+    <text x="50" y="178" fill="#D97706" font-size="11" font-weight="700" class="font-mono">Audit Proof Preserved</text>
+
+    <!-- Normal Carry Block -->
+    <rect x="470" y="60" width="400" height="140" rx="8" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <text x="490" y="90" fill="#1E40AF" font-size="14" font-weight="700" class="font-sans">Safe Custody Transfer Execution</text>
+    <text x="490" y="115" fill="#1E3A8A" font-size="12" class="font-body">• Move shiftId to target incoming shift</text>
+    <text x="490" y="135" fill="#1E3A8A" font-size="12" class="font-body">• Set status = 'Carried Forward'</text>
+    <text x="490" y="155" fill="#1E3A8A" font-size="12" class="font-body">• Increment cumulative carry counter</text>
+    <text x="490" y="178" fill="#059669" font-size="11" font-weight="700" class="font-mono">Provenance Logged to History</text>
+  </g>
+
+  <!-- Bottom Stage: Provenance & Resolution -->
+  <g transform="translate(50, 530)">
+    <rect x="0" y="0" width="900" height="210" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="30" y="35" fill="#0F172A" font-size="16" font-weight="700" class="font-sans">5. Provenance Tracking &amp; Strict Resolution Governance</text>
+
+    <!-- Repeat Risk -->
+    <rect x="30" y="60" width="260" height="120" rx="8" fill="#FEF2F2" stroke="#FECACA"/>
+    <text x="45" y="90" fill="#DC2626" font-size="14" font-weight="700" class="font-sans">Repeat Risk Telemetry</text>
+    <text x="45" y="115" fill="#991B1B" font-size="12" class="font-body">If carry &gt;= 2 shifts:</text>
+    <text x="45" y="135" fill="#991B1B" font-size="12" class="font-body">Automatic escalation to dashboard</text>
+    <text x="45" y="155" fill="#DC2626" font-size="11" font-weight="700" class="font-mono">Repeat Risk Alert</text>
+
+    <!-- Resolution Notes -->
+    <rect x="320" y="60" width="280" height="120" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="335" y="90" fill="#0F172A" font-size="14" font-weight="700" class="font-sans">Mandatory Resolution Notes</text>
+    <text x="335" y="115" fill="#64748B" font-size="12" class="font-body">Resolving or closing incidents strictly</text>
+    <text x="335" y="135" fill="#64748B" font-size="12" class="font-body">mandates actionable trimmed notes.</text>
+    <text x="335" y="155" fill="#059669" font-size="11" font-weight="700" class="font-mono">Enforced by setStatus</text>
+
+    <!-- closedShift Tracking -->
+    <rect x="630" y="60" width="240" height="120" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="645" y="90" fill="#065F46" font-size="14" font-weight="700" class="font-sans">closedShift Tracking</text>
+    <text x="645" y="115" fill="#047857" font-size="12" class="font-body">Records closing shift provenance.</text>
+    <text x="645" y="135" fill="#047857" font-size="12" class="font-body">Reopening safely clears state.</text>
+    <text x="645" y="155" fill="#059669" font-size="11" font-weight="700" class="font-mono">Provenance Integrity</text>
+  </g>
+
+</svg>

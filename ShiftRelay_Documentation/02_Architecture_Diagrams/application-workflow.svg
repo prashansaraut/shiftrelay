@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="500" viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>ShiftRelay Application Workflow</title>
+  <style>
+    .font-sans { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+    .font-body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <rect width="1000" height="500" fill="#F8FAFC"/>
+  
+  <!-- Diagram Header -->
+  <rect x="30" y="30" width="940" height="70" rx="10" fill="#0F172A"/>
+  <text x="50" y="72" fill="#FFFFFF" font-size="22" font-weight="800" class="font-sans">ShiftRelay — Visitor &amp; User Journey Workflow</text>
+
+  <!-- Flow Steps -->
+  <g transform="translate(50, 130)">
+    <!-- Node 1: Entry -->
+    <rect x="0" y="40" width="160" height="90" rx="8" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="15" y="75" fill="#0F172A" font-size="14" font-weight="700" class="font-sans">Visitor Entry</text>
+    <text x="15" y="100" fill="#2563EB" font-size="12" class="font-mono">URL: / or /demo</text>
+
+    <!-- Branch Arrows -->
+    <line x1="160" y1="85" x2="220" y2="40" stroke="#94A3B8" stroke-width="2"/>
+    <line x1="160" y1="85" x2="220" y2="130" stroke="#94A3B8" stroke-width="2"/>
+
+    <!-- Node 2: Landing -->
+    <rect x="230" y="0" width="220" height="80" rx="8" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <text x="245" y="32" fill="#1E40AF" font-size="14" font-weight="700" class="font-sans">Public Landing Page</text>
+    <text x="245" y="55" fill="#1E3A8A" font-size="12" class="font-body">Hero, Workflow, Engine</text>
+
+    <!-- Node 3: Demo -->
+    <rect x="230" y="95" width="220" height="80" rx="8" fill="#FFFBEB" stroke="#FDE68A"/>
+    <text x="245" y="127" fill="#D97706" font-size="14" font-weight="700" class="font-sans">Interactive Sandbox</text>
+    <text x="245" y="150" fill="#92400E" font-size="12" class="font-body">5 Milestones / Conflict Sim</text>
+
+    <!-- Connectors to Workspace -->
+    <line x1="450" y1="40" x2="520" y2="85" stroke="#94A3B8" stroke-width="2"/>
+    <line x1="450" y1="135" x2="520" y2="85" stroke="#94A3B8" stroke-width="2"/>
+
+    <!-- Node 4: Workspace Core -->
+    <rect x="530" y="30" width="400" height="280" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="555" y="65" fill="#0F172A" font-size="16" font-weight="800" class="font-sans">Operational Workspace (/app/*)</text>
+
+    <!-- Internal Modules -->
+    <g transform="translate(555, 85)">
+      <rect x="0" y="0" width="165" height="45" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="27" fill="#0F172A" font-size="12" font-weight="600" class="font-body">Dashboard</text>
+
+      <rect x="185" y="0" width="165" height="45" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="197" y="27" fill="#0F172A" font-size="12" font-weight="600" class="font-body">Shifts</text>
+
+      <rect x="0" y="55" width="165" height="45" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="82" fill="#0F172A" font-size="12" font-weight="600" class="font-body">Tasks</text>
+
+      <rect x="185" y="55" width="165" height="45" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="197" y="82" fill="#0F172A" font-size="12" font-weight="600" class="font-body">Incidents</text>
+
+      <rect x="0" y="115" width="350" height="70" rx="8" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <text x="16" y="142" fill="#1E40AF" font-size="13" font-weight="700" class="font-sans">Handovers Lifecycle</text>
+      <text x="16" y="165" fill="#1E3A8A" font-size="11" class="font-body">Draft ➔ Submitted ➔ Awaiting Sign-off ➔ Acknowledged</text>
+    </g>
+  </g>
+
+</svg>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>ShiftRelay Design System Spec</title>
+  <style>
+    .font-sans { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+    .font-body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <rect width="1200" height="900" fill="#F8FAFC"/>
+  
+  <!-- Header -->
+  <rect x="40" y="40" width="1120" height="100" rx="12" fill="#0F172A"/>
+  <text x="70" y="85" fill="#FFFFFF" font-size="28" font-weight="800" class="font-sans">ShiftRelay Design System 2.4</text>
+  <text x="70" y="115" fill="#94A3B8" font-size="14" font-weight="500" class="font-body">Color Tokens, Typographic Scale, Component Atoms &amp; Layout Systems</text>
+
+  <!-- Color Palette Section -->
+  <text x="40" y="180" fill="#0F172A" font-size="20" font-weight="700" class="font-sans">01. Color Palette Tokens</text>
+  
+  <g transform="translate(40, 200)">
+    <!-- Primary Blue -->
+    <rect x="0" y="0" width="160" height="90" rx="8" fill="#2563EB"/>
+    <text x="12" y="115" fill="#0F172A" font-size="13" font-weight="700" class="font-sans">Relay Ultramarine</text>
+    <text x="12" y="132" fill="#64748B" font-size="12" font-weight="500" class="font-mono">#2563EB • Primary</text>
+
+    <!-- Kinetic Amber -->
+    <rect x="180" y="0" width="160" height="90" rx="8" fill="#D97706"/>
+    <text x="192" y="115" fill="#0F172A" font-size="13" font-weight="700" class="font-sans">Kinetic Amber</text>
+    <text x="192" y="132" fill="#64748B" font-size="12" font-weight="500" class="font-mono">#D97706 • Carry/Active</text>
+
+    <!-- Continuity Emerald -->
+    <rect x="360" y="0" width="160" height="90" rx="8" fill="#059669"/>
+    <text x="372" y="115" fill="#0F172A" font-size="13" font-weight="700" class="font-sans">Continuity Emerald</text>
+    <text x="372" y="132" fill="#64748B" font-size="12" font-weight="500" class="font-mono">#059669 • Sign-off/OK</text>
+
+    <!-- Critical Ruby -->
+    <rect x="540" y="0" width="160" height="90" rx="8" fill="#DC2626"/>
+    <text x="552" y="115" fill="#0F172A" font-size="13" font-weight="700" class="font-sans">Critical Ruby</text>
+    <text x="552" y="132" fill="#64748B" font-size="12" font-weight="500" class="font-mono">#DC2626 • Severity/Alert</text>
+
+    <!-- Slate Obsidian -->
+    <rect x="720" y="0" width="160" height="90" rx="8" fill="#0F172A"/>
+    <text x="732" y="115" fill="#0F172A" font-size="13" font-weight="700" class="font-sans">Slate Obsidian</text>
+    <text x="732" y="132" fill="#64748B" font-size="12" font-weight="500" class="font-mono">#0F172A • Dark Core</text>
+
+    <!-- Border Neutral -->
+    <rect x="900" y="0" width="160" height="90" rx="8" fill="#E2E8F0" stroke="#CBD5E1"/>
+    <text x="912" y="115" fill="#0F172A" font-size="13" font-weight="700" class="font-sans">Border Neutral</text>
+    <text x="912" y="132" fill="#64748B" font-size="12" font-weight="500" class="font-mono">#E2E8F0 • Structural</text>
+  </g>
+
+  <!-- Typography Scale Section -->
+  <text x="40" y="400" fill="#0F172A" font-size="20" font-weight="700" class="font-sans">02. Typographic Scale</text>
+  <rect x="40" y="420" width="1120" height="190" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  
+  <text x="70" y="465" fill="#0F172A" font-size="32" font-weight="800" class="font-sans">Display Title 32px / Bold 800 — Never drop the baton.</text>
+  <text x="70" y="505" fill="#0F172A" font-size="22" font-weight="700" class="font-sans">Heading Two 22px / SemiBold 700 — Operational Shift Continuity</text>
+  <text x="70" y="540" fill="#0F172A" font-size="15" font-weight="600" class="font-body">Body Strong 15px / SemiBold 600 — Unbroken custody transfer across shift rotations.</text>
+  <text x="70" y="570" fill="#64748B" font-size="14" font-weight="400" class="font-body">Body Regular 14px / Regular 400 — The Continuity Engine auto-collects unresolved tickets without record cloning.</text>
+  <text x="70" y="595" fill="#64748B" font-size="12" font-weight="500" class="font-mono">Monospace 12px / Medium 500 — HO-8241 • TK-1001 • IN-2001 (Preserved IDs)</text>
+
+  <!-- Component Atoms Section -->
+  <text x="40" y="650" fill="#0F172A" font-size="20" font-weight="700" class="font-sans">03. UI Components &amp; Status Badges</text>
+  
+  <!-- Buttons Row -->
+  <rect x="40" y="675" width="180" height="44" rx="8" fill="#2563EB"/>
+  <text x="80" y="702" fill="#FFFFFF" font-size="14" font-weight="600" class="font-body">Primary Action</text>
+
+  <rect x="235" y="675" width="180" height="44" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="280" y="702" fill="#0F172A" font-size="14" font-weight="600" class="font-body">Secondary CTA</text>
+
+  <rect x="430" y="675" width="140" height="44" rx="8" fill="#FFFBEB" stroke="#FDE68A"/>
+  <text x="460" y="702" fill="#D97706" font-size="14" font-weight="600" class="font-body">Simulate Test</text>
+
+  <!-- Status Pills -->
+  <rect x="600" y="682" width="120" height="30" rx="15" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <text x="618" y="702" fill="#059669" font-size="12" font-weight="700" class="font-body">Acknowledged</text>
+
+  <rect x="735" y="682" width="130" height="30" rx="15" fill="#FFFBEB" stroke="#FDE68A"/>
+  <text x="750" y="702" fill="#D97706" font-size="12" font-weight="700" class="font-body">Carried Forward</text>
+
+  <rect x="880" y="682" width="115" height="30" rx="15" fill="#FEF2F2" stroke="#FECACA"/>
+  <text x="900" y="702" fill="#DC2626" font-size="12" font-weight="700" class="font-body">Repeat Risk</text>
+
+  <rect x="1010" y="682" width="120" height="30" rx="15" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <text x="1035" y="702" fill="#2563EB" font-size="12" font-weight="700" class="font-body">In Progress</text>
+
+  <!-- Input Field Preview -->
+  <rect x="40" y="745" width="380" height="44" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="60" y="772" fill="#94A3B8" font-size="14" font-weight="400" class="font-body">Search tasks, incidents, handovers...</text>
+
+  <!-- Callout Card Preview -->
+  <rect x="450" y="745" width="710" height="100" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <rect x="450" y="745" width="6" height="100" rx="3" fill="#2563EB"/>
+  <text x="475" y="775" fill="#0F172A" font-size="15" font-weight="700" class="font-sans">Continuity Engine Telemetry — Conflict-Free Handover Guarantee</text>
+  <text x="475" y="800" fill="#64748B" font-size="13" font-weight="400" class="font-body">Original record identifiers are locked and preserved across active transitions. No throwaway copies.</text>
+  <text x="475" y="825" fill="#059669" font-size="12" font-weight="600" class="font-mono">STATUS: 0 Orphaned Records • Mutual Verification Mandatory</text>
+
+</svg>

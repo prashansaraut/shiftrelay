@@ -1,0 +1,480 @@
+╔══════════════════════════════════════════════════════════╗
+║        SHIFTRELAY MASTER AUTOMATED TEST RUNNER          ║
+║        Verifying Functional, State & Visual Safety       ║
+╚══════════════════════════════════════════════════════════╝
+Date: 2026-11-22T08:06:04.523Z
+Node Version: v26.13.1
+Test Directory: C:\Users\MANTHAN RAUT\.gemini\antigravity\scratch\ShiftRelay_Documentation\06_Testing\Automated_Tests\
+
+
+============================================================
+RUNNING: Store & Continuity Engine Suite (test_suite.js)
+============================================================
+=== TEST SUITE 1: Dashboard Statistics ===
+  ✓ PASS: TK-1003 with carry: 2 flagged as repeat risk
+  ✓ PASS: Carried statistic accounts for carried open incidents
+  ✓ PASS: Carried statistic accounts for carried open tasks
+  ✓ PASS: Incidents with carry >= 2 flagged in repeat risks
+
+=== TEST SUITE 2: Status Transition Validation ===
+  ✓ PASS: Tasks cannot be manually set to Carried Forward
+  ✓ PASS: Completed task records closedShift
+  ✓ PASS: Reopening completed task clears closedShift
+  ✓ PASS: Incident cannot be resolved without resolution notes
+  ✓ PASS: Incident cannot be closed with whitespace notes
+  ✓ PASS: Resolved incident records closedShift
+  ✓ PASS: Activity log specifies "Incident resolved"
+  ✓ PASS: Activity log specifies "Incident closed"
+  ✓ PASS: Reopening resolved incident clears closedShift
+
+=== TEST SUITE 3: Continuity Engine & Handover Validation (Gap 1 Covered) ===
+  ✓ PASS: Rejects non-existent shift IDs
+  ✓ PASS: Rejects identical from and to shifts
+  ✓ PASS: Successfully prepares handover
+  ✓ PASS: Duplicate open handover for the same shift pair is rejected
+  ✓ PASS: Duplicate handover attempt returns existing open handover object
+  ✓ PASS: Completed task TK-1004 excluded from handover
+  ✓ PASS: Handover acknowledged successfully
+  ✓ PASS: Continuity Engine detected reassignment conflict
+  ✓ PASS: Continuity Engine preserved TK-1002 new assignment to Night Shift
+  ✓ PASS: Non-conflicting task1001 moved to Evening Shift
+  ✓ PASS: Carried task status set to Carried Forward
+  ✓ PASS: Carry counter incremented
+  ✓ PASS: Original ID and audit history preserved
+
+=== TEST SUITE 4: Shift Overlap Validation (Gap 2 Covered) ===
+  ✓ PASS: Shift creation with overlapping hours in same department rejected
+  ✓ PASS: Overlap validator accurately names conflicting shift and department
+  ✓ PASS: Non-overlapping shift in different department allowed
+
+=== TEST SUITE 5: Repeat-Risk Lifecycle (Gap 5 Covered) ===
+  ✓ PASS: Initial open task (carry: 0) is not a repeat risk
+  ✓ PASS: First handover acknowledged
+  ✓ PASS: Task carry count equals 1 after first handover
+  ✓ PASS: Task with carry === 1 is carried but not yet a repeat risk
+  ✓ PASS: Task with carry === 1 is listed under carried items
+  ✓ PASS: Second handover acknowledged
+  ✓ PASS: Task carry count equals 2 after second handover
+  ✓ PASS: Task carried twice (carry >= 2) appears in stats().repeat after two real handover acknowledgements
+
+=== TEST SUITE 6: Interactive Demo In-Memory Sandbox Isolation ===
+  ✓ PASS: Interactive demo NEVER modifies production store data in LocalStorage
+
+========================================
+TEST SUITE RESULTS: 38 PASSED, 0 FAILED
+========================================
+
+============================================================
+RUNNING: LocalStorage Migration & Resilience Suite (test_storage.js)
+============================================================
+=== TEST SUITE: LocalStorage Migration & Resilience ===
+  ✓ PASS: Corrupted JSON "{" falls back to object without crashing
+  ✓ PASS: Corrupted storage falls back to clean seed shifts
+  ✓ PASS: Corrupted storage falls back to clean seed tasks
+  ✓ PASS: Existing custom task is preserved during repair
+  ✓ PASS: Missing handovers array is repaired to a valid array
+  ✓ PASS: Repaired handovers array initialized cleanly without dropping tasks
+  ✓ PASS: Legacy role loaded correctly
+  ✓ PASS: Legacy user preferences loaded correctly
+  ✓ PASS: Legacy shifts loaded without data loss
+  ✓ PASS: Legacy tasks loaded without data loss
+  ✓ PASS: Legacy incidents loaded without data loss
+  ✓ PASS: Legacy handovers loaded without data loss
+  ✓ PASS: Legacy employees loaded without data loss
+  ✓ PASS: Legacy activity loaded without data loss
+  ✓ PASS: shiftrelay.v1 key created automatically on legacy load
+  ✓ PASS: shiftrelay.v1 persists legacy shifts correctly
+  ✓ PASS: shiftrelay.v1 persists legacy tasks correctly
+  ✓ PASS: shiftrelay.v1 persists legacy incidents correctly
+  ✓ PASS: shiftrelay.v1 persists legacy handovers correctly
+  ✓ PASS: shiftrelay.v1 persists legacy employees correctly
+  ✓ PASS: Safe save returns ok: false when quota exceeded
+  ✓ PASS: Safe save returns descriptive quota error message
+
+========================================
+STORAGE TEST RESULTS: 22 PASSED, 0 FAILED
+========================================
+
+============================================================
+RUNNING: SPA Route Matching & Regex Suite (test_routes.mjs)
+============================================================
+  ✓ PASS: Path /                         -> MATCHED [/]
+  ✓ PASS: Path /index.html               -> MATCHED [/index.html]
+  ✓ PASS: Path /demo                     -> MATCHED [/demo]
+  ✓ PASS: Path /app/dashboard            -> MATCHED [/app/dashboard]
+  ✓ PASS: Path /app/shifts               -> MATCHED [/app/shifts]
+  ✓ PASS: Path /app/shifts/new           -> MATCHED [/app/shifts/new]
+  ✓ PASS: Path /app/shifts/SH-MORN       -> MATCHED [/app/shifts/:id]
+  ✓ PASS: Path /app/shifts/SH-MORN/edit  -> MATCHED [/app/shifts/:id/edit]
+  ✓ PASS: Path /app/handovers            -> MATCHED [/app/handovers]
+  ✓ PASS: Path /app/handovers/new        -> MATCHED [/app/handovers/new]
+  ✓ PASS: Path /app/handovers/HO-1001    -> MATCHED [/app/handovers/:id]
+  ✓ PASS: Path /app/tasks                -> MATCHED [/app/tasks]
+  ✓ PASS: Path /app/tasks/TK-1001        -> MATCHED [/app/tasks/:id]
+  ✓ PASS: Path /app/incidents            -> MATCHED [/app/incidents]
+  ✓ PASS: Path /app/incidents/IN-2001    -> MATCHED [/app/incidents/:id]
+  ✓ PASS: Path /app/activity             -> MATCHED [/app/activity]
+  ✓ PASS: Path /app/settings             -> MATCHED [/app/settings]
+  ✓ PASS: Path /app/search               -> MATCHED [/app/search]
+  ✓ PASS: Path /dashboard                -> MATCHED [/dashboard]
+  ✓ PASS: Path /shifts                   -> MATCHED [/shifts]
+  ✓ PASS: Path /tasks                    -> MATCHED [/tasks]
+
+Route check complete. 21 Passed, 0 Failed.
+
+============================================================
+RUNNING: Server Request & MIME Handler Suite (test_handler.mjs)
+============================================================
+  ✓ PASS: GET /                    -> 200 [text/html; charset=utf-8] (7817 bytes)
+  ✓ PASS: GET /demo                -> 200 [text/html; charset=utf-8] (7817 bytes)
+  ✓ PASS: GET /app/dashboard       -> 200 [text/html; charset=utf-8] (7817 bytes)
+  ✓ PASS: GET /app/shifts          -> 200 [text/html; charset=utf-8] (7817 bytes)
+  ✓ PASS: GET /app/tasks/TK-1001   -> 200 [text/html; charset=utf-8] (7817 bytes)
+  ✓ PASS: GET /css/main.css        -> 200 [text/css; charset=utf-8] (90092 bytes)
+  ✓ PASS: GET /js/app.js           -> 200 [text/javascript; charset=utf-8] (17655 bytes)
+  ✓ PASS: GET /js/brand.js         -> 200 [text/javascript; charset=utf-8] (3012 bytes)
+  ✓ PASS: GET /js/store.js         -> 200 [text/javascript; charset=utf-8] (17364 bytes)
+
+Handler check complete: 9/9 endpoints verified.
+
+============================================================
+RUNNING: View Route Handlers Execution Suite (test_all_handlers.mjs)
+============================================================
+  ✓ PASS: Route [/] returned valid HTML (28022 chars)
+  ✓ PASS: Route [/index.html] returned valid HTML (28022 chars)
+  ✓ PASS: Route [/home] redirects to -> /
+  ✓ PASS: Route [/demo] returned valid HTML (7810 chars)
+  ✓ PASS: Route [/app] redirects to -> /app/dashboard
+  ✓ PASS: Route [/app/dashboard] returned valid HTML (2816 chars)
+  ✓ PASS: Route [/workspace] redirects to -> /app/dashboard
+  ✓ PASS: Route [/app/shifts] returned valid HTML (1559 chars)
+  ✓ PASS: Route [/app/shifts/new] returned valid HTML (1460 chars)
+  ✓ PASS: Route [/app/shifts/:id/edit] returned valid HTML (141 chars)
+  ✓ PASS: Route [/app/shifts/:id] returned valid HTML (141 chars)
+  ✓ PASS: Route [/app/handovers] returned valid HTML (776 chars)
+  ✓ PASS: Route [/app/handovers/new] returned valid HTML (2505 chars)
+  ✓ PASS: Route [/app/handovers/:id/edit] returned valid HTML (144 chars)
+  ✓ PASS: Route [/app/handovers/:id] returned valid HTML (144 chars)
+  ✓ PASS: Route [/app/tasks] returned valid HTML (5900 chars)
+  ✓ PASS: Route [/app/tasks/new] returned valid HTML (2296 chars)
+  ✓ PASS: Route [/app/tasks/:id/edit] returned valid HTML (2392 chars)
+  ✓ PASS: Route [/app/tasks/:id] returned valid HTML (825 chars)
+  ✓ PASS: Route [/app/incidents] returned valid HTML (3536 chars)
+  ✓ PASS: Route [/app/incidents/new] returned valid HTML (2968 chars)
+  ✓ PASS: Route [/app/incidents/:id/edit] returned valid HTML (144 chars)
+  ✓ PASS: Route [/app/incidents/:id] returned valid HTML (144 chars)
+  ✓ PASS: Route [/app/activity] returned valid HTML (159 chars)
+  ✓ PASS: Route [/app/settings] returned valid HTML (3020 chars)
+  ✓ PASS: Route [/app/search] returned valid HTML (100 chars)
+  ✓ PASS: Route [/dashboard] redirects to -> /app/dashboard
+  ✓ PASS: Route [/shifts] redirects to -> /app/shifts
+  ✓ PASS: Route [/shifts/new] redirects to -> /app/shifts/new
+  ✓ PASS: Route [/shifts/:id/edit] redirects to -> /app/shifts/TK-1001/edit
+  ✓ PASS: Route [/shifts/:id] redirects to -> /app/shifts/TK-1001
+  ✓ PASS: Route [/handovers] redirects to -> /app/handovers
+  ✓ PASS: Route [/handovers/new] redirects to -> /app/handovers/new
+  ✓ PASS: Route [/handovers/:id/edit] redirects to -> /app/handovers/TK-1001/edit
+  ✓ PASS: Route [/handovers/:id] redirects to -> /app/handovers/TK-1001
+  ✓ PASS: Route [/tasks] redirects to -> /app/tasks
+  ✓ PASS: Route [/tasks/new] redirects to -> /app/tasks/new
+  ✓ PASS: Route [/tasks/:id/edit] redirects to -> /app/tasks/TK-1001/edit
+  ✓ PASS: Route [/tasks/:id] redirects to -> /app/tasks/TK-1001
+  ✓ PASS: Route [/incidents] redirects to -> /app/incidents
+  ✓ PASS: Route [/incidents/new] redirects to -> /app/incidents/new
+  ✓ PASS: Route [/incidents/:id/edit] redirects to -> /app/incidents/TK-1001/edit
+  ✓ PASS: Route [/incidents/:id] redirects to -> /app/incidents/TK-1001
+  ✓ PASS: Route [/activity] redirects to -> /app/activity
+  ✓ PASS: Route [/settings] redirects to -> /app/settings
+  ✓ PASS: Route [/search] redirects to -> /app/search
+
+Handler test complete. 46 Passed, 0 Errors.
+
+============================================================
+RUNNING: HTTP Socket & Ephemeral Server Suite (test_server.mjs)
+============================================================
+Server test instance listening on ephemeral port 54875
+  ✓ PASS: GET /                  -> 200 [text/html; charset=utf-8] (7813 bytes)
+  ✓ PASS: GET /demo              -> 200 [text/html; charset=utf-8] (7813 bytes)
+  ✓ PASS: GET /app/dashboard     -> 200 [text/html; charset=utf-8] (7813 bytes)
+  ✓ PASS: GET /app/shifts        -> 200 [text/html; charset=utf-8] (7813 bytes)
+  ✓ PASS: GET /app/tasks         -> 200 [text/html; charset=utf-8] (7813 bytes)
+  ✓ PASS: GET /css/main.css      -> 200 [text/css; charset=utf-8] (90092 bytes)
+  ✓ PASS: GET /js/app.js         -> 200 [text/javascript; charset=utf-8] (17655 bytes)
+  ✓ PASS: GET /js/brand.js       -> 200 [text/javascript; charset=utf-8] (3012 bytes)
+  ✓ PASS: GET /js/store.js       -> 200 [text/javascript; charset=utf-8] (17362 bytes)
+
+Server check complete. 9/9 Endpoints Verified over HTTP socket.
+
+============================================================
+RUNNING: Theme & Profile Preferences Suite (test_theme_and_profile.mjs)
+============================================================
+=== TEST SUITE: Theme, Profile & Preferences ===
+  ✓ PASS: Theme defaults to light mode
+  ✓ PASS: setTheme persists dark theme to LocalStorage
+  ✓ PASS: setTheme switches back to light theme seamlessly
+  ✓ PASS: setRole correctly switches simulated employee role
+  ✓ PASS: setUserPreferences correctly updates and persists profile settings
+  ✓ PASS: Landing page CTAs and footer brand contrast standardized
+========================================
+ALL THEME & PROFILE TESTS PASSED (100%)
+========================================
+
+============================================================
+RUNNING: Theme & Mobile Responsiveness Suite (test_theme_and_phone.mjs)
+============================================================
+====================================================
+🎨 SHIFTRELAY THEME & MOBILE PHONE RESPONSIVE AUDIT
+====================================================
+
+--- 1. Theme Toggle Controls Across All Views ---
+  ✓ PASS: Workspace Topbar has #themeToggle button
+  ✓ PASS: Landing Page Desktop Navigation includes theme toggle button
+  ✓ PASS: Landing Page Mobile Drawer includes theme toggle button
+  ✓ PASS: Interactive Demo Header includes theme toggle button
+  ✓ PASS: Click event listener delegates theme toggling across all views
+  ✓ PASS: syncThemeUI updates all theme toggle button icons across the DOM
+
+--- 2. Font Visibility in White Theme ---
+  ✓ PASS: Continuity Engine card h3 heading has explicit white color (#FFFFFF !important)
+  ✓ PASS: Continuity Engine code spans have high-contrast styling
+  ✓ PASS: Section tag in Continuity Engine is high-contrast light blue
+  ✓ PASS: Brand name on light surfaces is deep dark navy (#0F172A)
+  ✓ PASS: Footer brand name in light theme is deep dark navy (#0F172A)
+
+--- 3. Dark Theme Coverage Across All Pages & Sections ---
+  ✓ PASS: Landing page navbar styled in dark theme
+  ✓ PASS: Landing page hero styled in dark theme
+  ✓ PASS: Hero title styled in dark theme with #F8FAFC
+  ✓ PASS: Hero product preview window styled in dark theme
+  ✓ PASS: Product preview card styled in dark theme
+  ✓ PASS: Subtle sections styled in dark theme (#0B0F19)
+  ✓ PASS: Comparison cards styled in dark theme
+  ✓ PASS: Workflow step cards styled in dark theme
+  ✓ PASS: Feature boxes styled in dark theme
+  ✓ PASS: Final CTA banner styled in dark theme
+  ✓ PASS: Footer styled in dark theme
+  ✓ PASS: Mobile drawer styled in dark theme
+  ✓ PASS: Interactive demo header styled in dark theme
+  ✓ PASS: Demo stepper buttons styled in dark theme
+  ✓ PASS: Demo step callout styled in dark theme
+  ✓ PASS: Workspace profile dropdown styled in dark theme
+
+--- 4. Dedicated Phone Size Responsiveness (<= 480px) ---
+  ✓ PASS: Mobile phone media query block is present
+  ✓ PASS: Mobile nav inner constrained to viewport
+  ✓ PASS: Hero grid collapses to 1fr on phones
+  ✓ PASS: Hero title prevents overflow on narrow phone screens
+  ✓ PASS: Hero CTA buttons stack into full-width touch targets on phones
+  ✓ PASS: Problem vs Solution matrix collapses to single column on phones
+  ✓ PASS: Workflow stepper transforms into vertical cards on phones
+  ✓ PASS: Continuity engine grid collapses to 1fr on phones
+  ✓ PASS: Features grid collapses to 1fr on phones
+  ✓ PASS: Final CTA buttons stack vertically on phones
+  ✓ PASS: Footer grid stacks cleanly on phones
+  ✓ PASS: Workspace topbar strictly restricted on phone viewports
+  ✓ PASS: Global search input compact on mobile phones
+  ✓ PASS: Demo quick link hidden on phones to avoid overcrowding topbar
+  ✓ PASS: Profile name/role text hidden on phones (shows initials avatar only)
+  ✓ PASS: Dashboard metric cards collapse into single column on phones
+  ✓ PASS: All data tables scroll horizontally with touch momentum on phones
+
+====================================================
+TOTAL AUDIT CHECKS: 44 | PASSED: 44 | FAILED: 0
+====================================================
+🎉 ALL THEME & MOBILE RESPONSIVENESS AUDIT CHECKS PASSED (100%)!
+
+============================================================
+RUNNING: Deep Frontend Functional Suite (test_deep_frontend.mjs)
+============================================================
+====================================================
+🚀 RUNNING DEEP COMPREHENSIVE FRONTEND TEST SUITE
+====================================================
+
+--- 1. Public Landing Page Tests ---
+  ✓ PASS: Landing view is marked as public
+  ✓ PASS: Landing contains correct headline
+  ✓ PASS: Landing contains standardized "Explore Interactive Demo" CTA
+  ✓ PASS: Landing contains standardized "Open Workspace" CTA
+  ✓ PASS: Discordant CTA label "Launch Guided Demo" is eliminated
+  ✓ PASS: Dark navy and blue logo variation is used on light surfaces
+  ✓ PASS: 4-column structured footer layout is rendered
+  ✓ PASS: Footer includes zero-dependency badge
+
+--- 2. Interactive Demonstration Walkthrough Tests ---
+  ✓ PASS: Demo initializes at Step 1
+  ✓ PASS: Demo has initial sample tasks
+  ✓ PASS: Demo has initial sample incidents
+  ✓ PASS: Handover preparation advances demo to Step 2
+  ✓ PASS: Handover object created in demo state
+  ✓ PASS: Demo handover generated awaiting review and sign-off
+  ✓ PASS: Demo step set to Step 3
+  ✓ PASS: Conflict flag is recorded
+  ✓ PASS: TK-1002 reassigned to Night Shift in memory
+  ✓ PASS: Acknowledgement advances demo to Step 5
+  ✓ PASS: Demo handover acknowledged
+  ✓ PASS: Continuity Engine recorded the mid-flight conflict in conflicts log
+  ✓ PASS: Conflict task safely kept SH-NIGHT assignment
+  ✓ PASS: In-memory demo operated with ZERO LocalStorage pollution
+
+--- 3. Operations Dashboard & Metric Calculation Tests ---
+  ✓ PASS: Dashboard title matches
+  ✓ PASS: Dashboard includes active shifts widget
+  ✓ PASS: Dashboard includes Carried Forward metric
+  ✓ PASS: Dashboard includes critical incidents metric
+  ✓ PASS: Dashboard includes continuity risk analysis card
+
+--- 4. Task Management & State Transition Tests ---
+  ✓ PASS: Tasks list view rendered
+  ✓ PASS: Tasks list contains TK-1001
+  ✓ PASS: Manual transition to Carried Forward is blocked
+  ✓ PASS: Task status set to Completed
+  ✓ PASS: closedShift successfully recorded upon task completion
+  ✓ PASS: Task reopened to In Progress
+  ✓ PASS: Reopening task successfully cleared previous closedShift
+
+--- 5. Incident Anomaly Log & Resolution Notes Tests ---
+  ✓ PASS: Incidents list view rendered
+  ✓ PASS: Resolving incident without notes is strictly blocked
+  ✓ PASS: Whitespace-only resolution notes are rejected
+  ✓ PASS: Incident resolved successfully with valid notes
+  ✓ PASS: Incident status set to Resolved
+  ✓ PASS: Resolution notes persisted
+  ✓ PASS: closedShift recorded for resolved incident
+  ✓ PASS: Reopening incident cleared closedShift
+
+--- 6. Handover Protocol & Continuity Engine Tests ---
+  ✓ PASS: Handover prepared successfully without error
+  ✓ PASS: Outgoing shift is Morning Shift
+  ✓ PASS: Incoming shift is Evening Shift
+  ✓ PASS: Unresolved task TK-1002 attached automatically
+  ✓ PASS: Completed task TK-1004 excluded automatically
+  ✓ PASS: Handover advanced from Draft to Submitted
+  ✓ PASS: Handover advanced from Submitted to Awaiting Acknowledgement
+  ✓ PASS: Acknowledgement succeeded
+  ✓ PASS: Continuity Engine caught 1 conflict
+  ✓ PASS: Continuity Engine preserved TK-1002 newer assignment to SH-NIGHT
+  ✓ PASS: TK-1003 transitioned to Evening Shift
+  ✓ PASS: TK-1003 status marked Carried Forward
+  ✓ PASS: TK-1003 carry count incremented
+  ✓ PASS: Original primary record ID strictly preserved
+
+--- 7. Theme System & User Profile Settings Tests ---
+  ✓ PASS: Theme defaults to light mode
+  ✓ PASS: Theme toggles to dark mode and updates storage
+  ✓ PASS: Simulated role switched to Incoming Shift Employee
+  ✓ PASS: Custom demo display name saved
+  ✓ PASS: Default workspace route saved
+  ✓ PASS: Custom toast duration saved
+
+--- 8. SPA URL Normalization & Router Tests ---
+  ✓ PASS: Root path normalizes to /
+  ✓ PASS: Subfolder path normalizes to /
+  ✓ PASS: Subfolder demo path normalizes to /demo
+  ✓ PASS: Workspace dashboard path normalizes correctly
+  ✓ PASS: Subfolder workspace path normalizes correctly
+  ✓ PASS: Hash routing fallback supported
+  ✓ PASS: Hash routing for workspace supported
+
+--- 9. Offline SVG Fallback Verification ---
+  ✓ PASS: UI icons module is healthy
+
+====================================================
+TOTAL TESTS: 70 | PASSED: 70 | FAILED: 0
+====================================================
+
+============================================================
+RUNNING: Architecture & Design Consistency Suite (test_comprehensive_frontend.mjs)
+============================================================
+================================================================
+🔬 SHIFTRELAY COMPREHENSIVE FRONTEND ARCHITECTURE & DESIGN AUDIT
+================================================================
+
+--- 1. Landing Page Hierarchy & Visual Contrast ---
+  ✓ PASS: Primary hero CTA is standardized to "Explore Interactive Demo"
+  ✓ PASS: Secondary hero CTA is standardized to "Open Workspace"
+  ✓ PASS: Legacy "Launch Guided Demo" label is completely purged
+  ✓ PASS: Navbar logo uses high-contrast dark text variation on light surface
+  ✓ PASS: Footer logo uses high-contrast dark text variation on light surface
+  ✓ PASS: Landing page contains Continuity Engine deep-dive section
+  ✓ PASS: Landing page contains Problem vs Solution section
+  ✓ PASS: Landing page contains Product modules showcase
+
+--- 2. Interactive Demo Milestone Accuracy ---
+  ✓ PASS: Demo Milestone 1 is Outgoing Inspection
+  ✓ PASS: Demo Milestone 2 is Handover Draft
+  ✓ PASS: Demo Milestone 3 is Conflict Detection
+  ✓ PASS: Demo Milestone 4 is Incoming Sign-off
+  ✓ PASS: Demo Milestone 5 is Continuity Audit
+  ✓ PASS: Demo simulates concurrent conflict by reassigning TK-1002 to Night Shift
+  ✓ PASS: Demo provides a clean Reset / Replay mechanism
+
+--- 3. Workspace Layout & Navigation Integrity ---
+  ✓ PASS: Workspace features a persistent sidebar container
+  ✓ PASS: Workspace features a persistent top navigation bar
+  ✓ PASS: Workspace features global search input
+  ✓ PASS: Workspace features dedicated profile dropdown menu
+  ✓ PASS: Workspace includes Dashboard route
+  ✓ PASS: Workspace includes Shifts route
+  ✓ PASS: Workspace includes Handovers route
+  ✓ PASS: Workspace includes Tasks route
+  ✓ PASS: Workspace includes Incidents route
+  ✓ PASS: Workspace includes Activity route
+  ✓ PASS: Workspace includes Settings route
+
+--- 4. CSS Architecture & Overflow Safety ---
+  ✓ PASS: Root html/body rules contain overflow-x: hidden to prevent mobile horizontal blowouts
+  ✓ PASS: Desktop workspace restricts #main width to calc(100% - 240px)
+  ✓ PASS: Universal box-sizing reset is active
+  ✓ PASS: CSS defines tablet breakpoint at <= 1024px
+  ✓ PASS: CSS defines mobile phone breakpoint at <= 480px
+  ✓ PASS: CSS includes off-canvas mobile drawer styling
+
+--- 5. Seed Data & Continuity Engine Guarantees ---
+  ✓ PASS: Seed data defines 3 24/7 continuous shifts
+  ✓ PASS: Seed data defines realistic departments
+  ✓ PASS: Continuity Engine exposes prepare() constructor
+  ✓ PASS: Continuity Engine exposes acknowledge() transition protocol
+  ✓ PASS: Continuity Engine exposes live stats() aggregator
+
+================================================================
+TOTAL AUDIT CHECKS: 37 | PASSED: 37 | FAILED: 0
+================================================================
+🎉 ALL ARCHITECTURAL CHECKS PASSED (100% VERIFIED)!
+
+============================================================
+RUNNING: CSS Core Selectors Integrity Suite (test_check.mjs)
+============================================================
+  ✓ PASS: Core selector ".tl" is defined in main.css
+  ✓ PASS: Core selector ".filters" is defined in main.css
+  ✓ PASS: Core selector ".empty" is defined in main.css
+  ✓ PASS: Core selector ".card" is defined in main.css
+  ✓ PASS: Core selector ".badge" is defined in main.css
+  ✓ PASS: Core selector ".btn" is defined in main.css
+  ✓ PASS: Core selector ".toast" is defined in main.css
+  ✓ PASS: Core selector ".scroll" is defined in main.css
+  ✓ PASS: Core selector ".top" is defined in main.css
+  ✓ PASS: Core selector "#side" is defined in main.css
+
+CSS class check complete. 10 Passed, 0 Failed.
+
+
+╔══════════════════════════════════════════════════════════╗
+║                    TEST SUMMARY REPORT                   ║
+╚══════════════════════════════════════════════════════════╝
+  ✓ PASS   test_suite.js                       [Store & Continuity Engine Suite]
+  ✓ PASS   test_storage.js                     [LocalStorage Migration & Resilience Suite]
+  ✓ PASS   test_routes.mjs                     [SPA Route Matching & Regex Suite]
+  ✓ PASS   test_handler.mjs                    [Server Request & MIME Handler Suite]
+  ✓ PASS   test_all_handlers.mjs               [View Route Handlers Execution Suite]
+  ✓ PASS   test_server.mjs                     [HTTP Socket & Ephemeral Server Suite]
+  ✓ PASS   test_theme_and_profile.mjs          [Theme & Profile Preferences Suite]
+  ✓ PASS   test_theme_and_phone.mjs            [Theme & Mobile Responsiveness Suite]
+  ✓ PASS   test_deep_frontend.mjs              [Deep Frontend Functional Suite]
+  ✓ PASS   test_comprehensive_frontend.mjs     [Architecture & Design Consistency Suite]
+  ✓ PASS   test_check.mjs                      [CSS Core Selectors Integrity Suite]
+────────────────────────────────────────────────────────────
+TOTAL SUITES: 11 | PASSED: 11 | FAILED: 0
+Execution Time: 4.81s
+────────────────────────────────────────────────────────────
+
+🎉 ALL 11 TEST SUITES PASSED WITH 100% SUCCESS!

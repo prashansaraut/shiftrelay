@@ -1,0 +1,17 @@
+{
+  "name": "shiftrelay",
+  "version": "2.4.0",
+  "description": "24/7 Shift Handover & Operational Continuity Management System",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/test_full_suite.mjs"
+  },
+  "keywords": [
+    "shift-handover",
+    "operational-continuity",
+    "single-page-application"
+  ],
+  "author": "Manthan Raut",
+  "license": "UNLICENSED"
+}

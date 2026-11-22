@@ -1,0 +1,87 @@
+<svg width="390" height="844" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="390" height="844" fill="#F8FAFC" />
+
+  <!-- Mobile Topbar -->
+  <rect x="0" y="0" width="390" height="56" fill="#FFFFFF" stroke="#E2E8F0" />
+  <text x="20" y="34" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#0F172A">â† Demo Milestone 3 of 5</text>
+  <rect x="290" y="12" width="80" height="32" rx="4" fill="#F1F5F9" stroke="#E2E8F0" />
+  <text x="306" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569">Reset</text>
+
+  <!-- Horizontal Milestone Stepper Carousel -->
+  <g transform="translate(20, 72)">
+    <rect width="350" height="40" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
+    <!-- Step 1 -->
+    <circle cx="28" cy="20" r="10" fill="#0F172A" />
+    <text x="25" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">1</text>
+    <line x1="42" y1="20" x2="80" y2="20" stroke="#0F172A" stroke-width="2" />
+
+    <!-- Step 2 -->
+    <circle cx="98" cy="20" r="10" fill="#0F172A" />
+    <text x="95" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">2</text>
+    <line x1="112" y1="20" x2="150" y2="20" stroke="#0F172A" stroke-width="2" />
+
+    <!-- Step 3 (Active) -->
+    <circle cx="168" cy="20" r="12" fill="#0F172A" stroke="#CBD5E1" stroke-width="3" />
+    <text x="165" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">3</text>
+    <line x1="184" y1="20" x2="222" y2="20" stroke="#CBD5E1" stroke-width="2" />
+
+    <!-- Step 4 -->
+    <circle cx="240" cy="20" r="10" fill="#E2E8F0" />
+    <text x="237" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748B">4</text>
+    <line x1="254" y1="20" x2="292" y2="20" stroke="#CBD5E1" stroke-width="2" />
+
+    <!-- Step 5 -->
+    <circle cx="310" cy="20" r="10" fill="#E2E8F0" />
+    <text x="307" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748B">5</text>
+  </g>
+
+  <!-- Active Milestone Header -->
+  <g transform="translate(20, 128)">
+    <text x="0" y="18" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Milestone 3: Detect Conflict / Edit</text>
+    <text x="0" y="36" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Simulate concurrent mid-flight changes during handover</text>
+  </g>
+
+  <!-- Conflict Callout Alert Box -->
+  <g transform="translate(20, 180)">
+    <rect width="350" height="90" rx="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5" />
+    <rect x="12" y="12" width="24" height="24" rx="4" fill="#0F172A" />
+    <text x="19" y="28" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">!</text>
+    <text x="44" y="28" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Collision Detected on TSK-104</text>
+    <text x="14" y="52" font-family="system-ui, sans-serif" font-size="11" fill="#334155">Task was modified by technician while handover drafting was</text>
+    <text x="14" y="68" font-family="system-ui, sans-serif" font-size="11" fill="#334155">in progress. Continuity Engine locked state.</text>
+  </g>
+
+  <!-- Interactive Conflict Diff Comparison -->
+  <g transform="translate(20, 286)">
+    <rect width="350" height="180" rx="8" fill="#FFFFFF" stroke="#E2E8F0" />
+    <text x="16" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0F172A">PAYLOAD STATE COMPARISON</text>
+
+    <!-- Staged Version -->
+    <rect x="16" y="38" width="318" height="56" rx="4" fill="#F8FAFC" stroke="#E2E8F0" />
+    <text x="26" y="58" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#64748B">Draft Handover Version:</text>
+    <text x="26" y="76" font-family="system-ui, sans-serif" font-size="12" fill="#334155">Status: Pending â€¢ Notes: 3 items</text>
+
+    <!-- Mid-flight Conflict Version -->
+    <rect x="16" y="104" width="318" height="56" rx="4" fill="#F1F5F9" stroke="#0F172A" />
+    <text x="26" y="124" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#0F172A">Live Modification (Simulated):</text>
+    <text x="26" y="142" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0F172A">Status: High Priority â€¢ Notes: Seal Replaced</text>
+  </g>
+
+  <!-- Resolution Action Controls -->
+  <g transform="translate(20, 484)">
+    <rect width="350" height="44" rx="6" fill="#0F172A" />
+    <text x="80" y="27" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Merge Changes &amp; Re-validate âœ“</text>
+
+    <rect y="56" width="350" height="44" rx="6" fill="#FFFFFF" stroke="#CBD5E1" />
+    <text x="106" y="83" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#0F172A">Override with Live State</text>
+  </g>
+
+  <!-- Step Progression Controls -->
+  <g transform="translate(20, 740)">
+    <rect width="168" height="44" rx="6" fill="#FFFFFF" stroke="#CBD5E1" />
+    <text x="44" y="27" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#475569">â† Milestone 2</text>
+
+    <rect x="182" y="0" width="168" height="44" rx="6" fill="#0F172A" />
+    <text x="220" y="27" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Milestone 4 â†’</text>
+  </g>
+</svg>

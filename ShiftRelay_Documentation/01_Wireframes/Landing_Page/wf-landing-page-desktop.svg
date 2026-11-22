@@ -1,0 +1,323 @@
+<svg width="1440" height="2800" viewBox="0 0 1440 2800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Page Background -->
+  <rect width="1440" height="2800" fill="#FFFFFF" />
+
+  <!-- 1. Top Navbar Wireframe (Sticky) -->
+  <rect x="0" y="0" width="1440" height="70" fill="#FFFFFF" stroke="#E2E8F0" />
+  <g transform="translate(80, 20)">
+    <!-- Logo Lockup -->
+    <circle cx="16" cy="16" r="14" fill="#E2E8F0" stroke="#0F172A" stroke-width="1.5" />
+    <rect x="13" y="9" width="6" height="14" rx="3" transform="rotate(25 16 16)" fill="#0F172A" />
+    <text x="40" y="22" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#0F172A">ShiftRelay</text>
+    <text x="40" y="32" font-family="system-ui, sans-serif" font-size="9" font-weight="500" fill="#64748B">Never drop the baton</text>
+
+    <!-- Nav Links -->
+    <text x="360" y="22" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#475569">Problem vs Solution</text>
+    <text x="530" y="22" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#475569">How It Works</text>
+    <text x="660" y="22" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#475569">Continuity Engine</text>
+    <text x="820" y="22" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#475569">Features</text>
+
+    <!-- Right Controls -->
+    <rect x="990" y="-3" width="36" height="36" rx="6" fill="#FFFFFF" stroke="#CBD5E1" />
+    <path d="M1008 8 C1012 8 1015 11 1015 15 C1015 19 1012 22 1008 22 C1010 20 1011 17 1011 15 C1011 13 1010 10 1008 8 Z" fill="#0F172A" />
+
+    <rect x="1040" y="-3" width="120" height="36" rx="6" fill="#FFFFFF" stroke="#CBD5E1" />
+    <text x="1055" y="19" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0F172A">Explore Demo</text>
+
+    <rect x="1175" y="-3" width="130" height="36" rx="6" fill="#0F172A" />
+    <text x="1195" y="19" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">Open Workspace</text>
+  </g>
+
+  <!-- 2. Hero Section Wireframe -->
+  <rect x="0" y="70" width="1440" height="540" fill="#F8FAFC" stroke="#E2E8F0" />
+  <g transform="translate(80, 110)">
+    <!-- Left Column: Copy & Actions -->
+    <g transform="translate(0, 30)">
+      <!-- System Pill -->
+      <rect x="0" y="0" width="250" height="28" rx="14" fill="#E2E8F0" stroke="#CBD5E1" />
+      <circle cx="14" cy="14" r="4" fill="#0F172A" />
+      <text x="26" y="18" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#0F172A">ShiftRelay 2.4 — Continuity System</text>
+
+      <!-- Main Headline -->
+      <text x="0" y="80" font-family="system-ui, sans-serif" font-size="44" font-weight="800" fill="#0F172A" line-height="1.15">
+        Never drop the baton
+      </text>
+      <text x="0" y="130" font-family="system-ui, sans-serif" font-size="44" font-weight="800" fill="#0F172A">
+        between shifts.
+      </text>
+
+      <!-- Subtitle Description -->
+      <text x="0" y="180" font-family="system-ui, sans-serif" font-size="16" fill="#475569">
+        Every shift connected. Nothing left behind. ShiftRelay turns handover blind spots into
+      </text>
+      <text x="0" y="205" font-family="system-ui, sans-serif" font-size="16" fill="#475569">
+        verifiable operational continuity with original record preservation and mutual sign-offs.
+      </text>
+
+      <!-- Action Buttons -->
+      <g transform="translate(0, 245)">
+        <rect x="0" y="0" width="220" height="48" rx="6" fill="#0F172A" />
+        <circle cx="28" cy="24" r="8" fill="none" stroke="#FFFFFF" stroke-width="1.5" />
+        <polygon points="26,20 32,24 26,28" fill="#FFFFFF" />
+        <text x="46" y="29" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Explore Interactive Demo</text>
+
+        <rect x="235" y="0" width="180" height="48" rx="6" fill="#FFFFFF" stroke="#CBD5E1" />
+        <text x="270" y="29" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#0F172A">Open Workspace</text>
+      </g>
+
+      <!-- Feature Proof List -->
+      <g transform="translate(0, 325)">
+        <path d="M0 8 L5 13 L14 4" stroke="#0F172A" stroke-width="2" fill="none" />
+        <text x="22" y="11" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#334155">Original Record ID Preservation</text>
+
+        <path d="M220 8 L225 13 L234 4" stroke="#0F172A" stroke-width="2" fill="none" />
+        <text x="242" y="11" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#334155">Traceable Carry-Forward History</text>
+
+        <path d="M460 8 L465 13 L474 4" stroke="#0F172A" stroke-width="2" fill="none" />
+        <text x="482" y="11" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#334155">Recorded Mutual Sign-Offs</text>
+      </g>
+    </g>
+
+    <!-- Right Column: Product Preview Window Mockup -->
+    <g transform="translate(680, 20)">
+      <rect width="600" height="420" rx="8" fill="#FFFFFF" stroke="#CBD5E1" filter="drop-shadow(0 10px 25px rgba(0,0,0,0.06))" />
+      <!-- Window Titlebar -->
+      <rect width="600" height="38" rx="8" fill="#F1F5F9" stroke="#E2E8F0" />
+      <circle cx="20" cy="19" r="5" fill="#CBD5E1" />
+      <circle cx="34" cy="19" r="5" fill="#CBD5E1" />
+      <circle cx="48" cy="19" r="5" fill="#CBD5E1" />
+      <rect x="70" y="8" width="220" height="22" rx="4" fill="#FFFFFF" stroke="#E2E8F0" />
+      <text x="82" y="23" font-family="monospace" font-size="10" fill="#64748B">shiftrelay.app/app/handovers/HO-8241</text>
+      <rect x="520" y="9" width="60" height="20" rx="10" fill="#E2E8F0" />
+      <text x="535" y="23" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#0F172A">● LIVE</text>
+
+      <!-- Mockup Content -->
+      <g transform="translate(25, 60)">
+        <text x="0" y="20" font-family="monospace" font-size="12" font-weight="700" fill="#0F172A">HO-8241</text>
+        <rect x="75" y="8" width="130" height="18" rx="4" fill="#FEF3C7" />
+        <text x="85" y="21" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#92400E">Awaiting Acknowledgement</text>
+        
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Morning Shift → Evening Shift Custody Handover</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Supervisor: Priya Nair • Outgoing Lead | Target: Alex Kumar • Incoming Lead</text>
+
+        <!-- Attached Tasks Preview -->
+        <rect x="0" y="95" width="550" height="60" rx="6" fill="#F8FAFC" stroke="#E2E8F0" />
+        <text x="15" y="120" font-family="monospace" font-size="11" font-weight="700" fill="#0F172A">TK-8241</text>
+        <text x="80" y="120" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0F172A">Inspect Boiler Feed Pump 2 Pressure</text>
+        <rect x="420" y="108" width="115" height="22" rx="11" fill="#E2E8F0" />
+        <text x="430" y="123" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#0F172A">Carried Forward</text>
+        <text x="15" y="142" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">Assigned to Evening Shift • Original Record ID Maintained</text>
+
+        <!-- Attached Incidents Preview -->
+        <rect x="0" y="165" width="550" height="60" rx="6" fill="#F8FAFC" stroke="#E2E8F0" />
+        <text x="15" y="190" font-family="monospace" font-size="11" font-weight="700" fill="#0F172A">IN-3012</text>
+        <text x="80" y="190" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0F172A">Cooling Water Line Valve Leakage</text>
+        <rect x="420" y="178" width="115" height="22" rx="11" fill="#E2E8F0" />
+        <text x="430" y="193" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#0F172A">Under Investigation</text>
+        <text x="15" y="212" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">Severity: Level 2 Major • Requires Mandatory Closure Notes</text>
+
+        <!-- Mock Signoff Action -->
+        <g transform="translate(0, 245)">
+          <rect width="550" height="50" rx="6" fill="#F1F5F9" stroke="#CBD5E1" />
+          <text x="15" y="30" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#0F172A">Incoming Shift Sign-Off Verification (Alex Kumar)</text>
+          <rect x="380" y="10" width="155" height="30" rx="4" fill="#0F172A" />
+          <text x="400" y="29" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Sign &amp; Acknowledge</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- 3. Problem vs Solution Section Wireframe -->
+  <rect x="0" y="610" width="1440" height="480" fill="#FFFFFF" />
+  <g transform="translate(80, 660)">
+    <rect x="560" y="0" width="160" height="24" rx="12" fill="#E2E8F0" />
+    <text x="580" y="16" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#0F172A">PROBLEM VS SOLUTION</text>
+    <text x="640" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="32" font-weight="800" fill="#0F172A">Why Operational Continuity Fails</text>
+    <text x="640" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#64748B">Shift handovers typically rely on fragmented logs, leading to lost context and duplicate record creation.</text>
+
+    <!-- Comparison Cards -->
+    <g transform="translate(0, 120)">
+      <!-- Traditional Handover (Flawed) -->
+      <rect x="0" y="0" width="620" height="240" rx="8" fill="#F8FAFC" stroke="#E2E8F0" />
+      <text x="30" y="40" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#0F172A">Traditional / Ad-Hoc Handovers</text>
+      <line x1="30" y1="55" x2="590" y2="55" stroke="#E2E8F0" />
+      <g transform="translate(30, 80)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="13" fill="#475569">✕ Disconnected paper notebooks, chat messages and verbal check-ins.</text>
+        <text x="0" y="30" font-family="system-ui, sans-serif" font-size="13" fill="#475569">✕ Tasks recreated anew on next shift, breaking historical ID traceability.</text>
+        <text x="0" y="60" font-family="system-ui, sans-serif" font-size="13" fill="#475569">✕ No mutual agreement or recorded incoming sign-off.</text>
+        <text x="0" y="90" font-family="system-ui, sans-serif" font-size="13" fill="#475569">✕ Repeat rollover items slip through unnoticed without alert thresholds.</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="13" fill="#475569">✕ Mid-flight assignment changes overwritten silently.</text>
+      </g>
+
+      <!-- ShiftRelay Method (Structured) -->
+      <rect x="660" y="0" width="620" height="240" rx="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="2" />
+      <text x="690" y="40" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#0F172A">The ShiftRelay Continuity Engine</text>
+      <line x1="690" y1="55" x2="1250" y2="55" stroke="#E2E8F0" />
+      <g transform="translate(690, 80)">
+        <text x="0" y="0" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#0F172A">✓ Single Page Application with continuous state persistence.</text>
+        <text x="0" y="30" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#0F172A">✓ Original record IDs preserved across multiple successive shifts.</text>
+        <text x="0" y="60" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#0F172A">✓ Mandatory mutual acknowledgement before shift custody transition.</text>
+        <text x="0" y="90" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#0F172A">✓ Automated carry-forward counters flag items rolled 2+ times.</text>
+        <text x="0" y="120" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#0F172A">✓ Conflict detection protects concurrent state edits during transition.</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 4. How It Works Section Wireframe -->
+  <rect x="0" y="1090" width="1440" height="420" fill="#F8FAFC" stroke="#E2E8F0" />
+  <g transform="translate(80, 1140)">
+    <rect x="560" y="0" width="160" height="24" rx="12" fill="#E2E8F0" />
+    <text x="575" y="16" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#0F172A">END-TO-END WORKFLOW</text>
+    <text x="640" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="32" font-weight="800" fill="#0F172A">How the Shift Baton Passes Seamlessly</text>
+    <text x="640" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#64748B">Five verifiable stages from outgoing shift capture to incoming custody acceptance.</text>
+
+    <!-- 5 Workflow Stepper Cards -->
+    <g transform="translate(0, 130)">
+      <!-- Step 1 -->
+      <rect x="0" y="0" width="240" height="170" rx="8" fill="#FFFFFF" stroke="#CBD5E1" />
+      <circle cx="30" cy="30" r="14" fill="#0F172A" />
+      <text x="26" y="35" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">1</text>
+      <text x="30" y="75" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Capture</text>
+      <text x="30" y="105" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Outgoing shift tracks tasks and incidents live. Items link directly to active shift.</text>
+
+      <!-- Step 2 -->
+      <rect x="260" y="0" width="240" height="170" rx="8" fill="#FFFFFF" stroke="#CBD5E1" />
+      <circle cx="290" cy="30" r="14" fill="#0F172A" />
+      <text x="286" y="35" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">2</text>
+      <text x="290" y="75" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Draft</text>
+      <text x="290" y="105" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">System automatically aggregates all open items into a structured handover draft.</text>
+
+      <!-- Step 3 -->
+      <rect x="520" y="0" width="240" height="170" rx="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="2" />
+      <circle cx="550" cy="30" r="14" fill="#0F172A" />
+      <text x="546" y="35" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">3</text>
+      <text x="550" y="75" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Review</text>
+      <text x="550" y="105" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Outgoing &amp; incoming leads inspect payload, check safety alerts, and note priorities.</text>
+
+      <!-- Step 4 -->
+      <rect x="780" y="0" width="240" height="170" rx="8" fill="#FFFFFF" stroke="#CBD5E1" />
+      <circle cx="810" cy="30" r="14" fill="#0F172A" />
+      <text x="806" y="35" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">4</text>
+      <text x="810" y="75" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Sign-Off</text>
+      <text x="810" y="105" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Incoming lead formally acknowledges custody, recording mutual sign-off timestamp.</text>
+
+      <!-- Step 5 -->
+      <rect x="1040" y="0" width="240" height="170" rx="8" fill="#FFFFFF" stroke="#CBD5E1" />
+      <circle cx="1070" cy="30" r="14" fill="#0F172A" />
+      <text x="1066" y="35" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">5</text>
+      <text x="1070" y="75" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Carry Forward</text>
+      <text x="1070" y="105" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Continuity Engine rolls uncompleted items into the new shift, preserving original IDs.</text>
+    </g>
+  </g>
+
+  <!-- 5. Continuity Engine Showcase Section (Dark Box) Wireframe -->
+  <rect x="0" y="1510" width="1440" height="460" fill="#0F172A" />
+  <g transform="translate(80, 1560)">
+    <rect x="540" y="0" width="200" height="24" rx="12" fill="#1E293B" stroke="#334155" />
+    <text x="555" y="16" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">SHIFT CONTINUITY ENGINE</text>
+    <text x="640" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="32" font-weight="800" fill="#FFFFFF">Architected for Zero Operational Blind Spots</text>
+    <text x="640" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#94A3B8">Core algorithmic guarantees enforcing record provenance, mutual agreement, and concurrency safety.</text>
+
+    <!-- 3 Engine Capability Cards -->
+    <g transform="translate(0, 130)">
+      <rect x="0" y="0" width="400" height="200" rx="8" fill="#1E293B" stroke="#334155" />
+      <text x="30" y="45" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">1. Immutable ID Provenance</text>
+      <text x="30" y="80" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Records (e.g. TK-8241) keep their original identity indefinitely. Carry-forward increments provenance metadata without re-keying or creating duplicate records.</text>
+      <rect x="30" y="145" width="130" height="24" rx="4" fill="#0F172A" stroke="#334155" />
+      <text x="40" y="161" font-family="monospace" font-size="11" fill="#FFFFFF">carry: (carry || 0) + 1</text>
+
+      <rect x="440" y="0" width="400" height="200" rx="8" fill="#1E293B" stroke="#334155" />
+      <text x="470" y="45" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">2. Conflict Protection</text>
+      <text x="470" y="80" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">If a task is reassigned during an active handover review, the Continuity Engine detects the concurrency collision and preserves newer state with an audit trail.</text>
+      <rect x="470" y="145" width="150" height="24" rx="4" fill="#0F172A" stroke="#334155" />
+      <text x="480" y="161" font-family="monospace" font-size="11" fill="#FFFFFF">conflictNoticeRecorded</text>
+
+      <rect x="880" y="0" width="400" height="200" rx="8" fill="#1E293B" stroke="#334155" />
+      <text x="910" y="45" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">3. Mandatory Sign-Off Lock</text>
+      <text x="910" y="80" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Handovers require explicit mutual sign-off. Items cannot jump to 'Carried Forward' through ad-hoc manual state manipulation—custody transfer is formal.</text>
+      <rect x="910" y="145" width="140" height="24" rx="4" fill="#0F172A" stroke="#334155" />
+      <text x="920" y="161" font-family="monospace" font-size="11" fill="#FFFFFF">status: 'Acknowledged'</text>
+    </g>
+  </g>
+
+  <!-- 6. Operational Modules Section Wireframe -->
+  <rect x="0" y="1970" width="1440" height="480" fill="#FFFFFF" />
+  <g transform="translate(80, 2020)">
+    <rect x="580" y="0" width="120" height="24" rx="12" fill="#E2E8F0" />
+    <text x="595" y="16" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#0F172A">CORE MODULES</text>
+    <text x="640" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="32" font-weight="800" fill="#0F172A">Six Purpose-Built Operational Modules</text>
+    <text x="640" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#64748B">Everything required to operate high-reliability facilities without framework bloat.</text>
+
+    <!-- 2x3 Grid of Modules -->
+    <g transform="translate(0, 120)">
+      <!-- Row 1 -->
+      <rect x="0" y="0" width="400" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" />
+      <text x="25" y="35" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Reactive Dashboard</text>
+      <text x="25" y="60" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Live metrics on carried tasks, repeated rollover risks, shift timelines, and active custody indicators.</text>
+
+      <rect x="440" y="0" width="400" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" />
+      <text x="465" y="35" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Shift Management</text>
+      <text x="465" y="60" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Schedule rosters, assign supervisors, verify time boundaries, and prevent overlapping shift misconfigurations.</text>
+
+      <rect x="880" y="0" width="400" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" />
+      <text x="905" y="35" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Handover Protocol</text>
+      <text x="905" y="60" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Automated item aggregation, safety checklists, mutual sign-off workflows, and conflict collision notices.</text>
+
+      <!-- Row 2 -->
+      <rect x="0" y="145" width="400" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" />
+      <text x="25" y="180" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Task Registry</text>
+      <text x="25" y="205" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Priority sorting, due-date monitors, department taxonomies, and immutable audit logs per item.</text>
+
+      <rect x="440" y="145" width="400" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" />
+      <text x="465" y="180" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Incident Anomaly Log</text>
+      <text x="465" y="205" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Severity-tiered incident tracking with mandatory resolution notes upon closure and automatic handover rollover.</text>
+
+      <rect x="880" y="145" width="400" height="120" rx="8" fill="#F8FAFC" stroke="#CBD5E1" />
+      <text x="905" y="180" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Unified Activity Stream</text>
+      <text x="905" y="205" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Comprehensive temporal audit log of all system state changes, status transitions, and handover sign-offs.</text>
+    </g>
+  </g>
+
+  <!-- 7. Final Call to Action Banner Wireframe -->
+  <rect x="0" y="2450" width="1440" height="200" fill="#0F172A" />
+  <g transform="translate(80, 2480)">
+    <text x="640" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">Ready to Eliminate Handover Blind Spots?</text>
+    <text x="640" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">Experience verifiable operational continuity with the interactive sandbox demo.</text>
+    <g transform="translate(480, 85)">
+      <rect x="0" y="0" width="180" height="44" rx="6" fill="#FFFFFF" />
+      <text x="25" y="27" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Explore Interactive Demo</text>
+
+      <rect x="195" y="0" width="150" height="44" rx="6" fill="#1E293B" stroke="#334155" />
+      <text x="220" y="27" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Open Workspace</text>
+    </g>
+  </g>
+
+  <!-- 8. Footer Section Wireframe -->
+  <rect x="0" y="2650" width="1440" height="150" fill="#F8FAFC" stroke="#E2E8F0" />
+  <g transform="translate(80, 2680)">
+    <g transform="translate(0, 0)">
+      <circle cx="12" cy="12" r="10" fill="#0F172A" />
+      <text x="30" y="16" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#0F172A">ShiftRelay</text>
+      <text x="0" y="40" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">Verifiable Shift Continuity &amp; Handover Platform</text>
+      <text x="0" y="60" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8">© 2026 ShiftRelay. Built with pure Vanilla JS, HTML5 &amp; CSS3.</text>
+    </g>
+    <g transform="translate(500, 0)">
+      <text x="0" y="16" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0F172A">EXPLORE</text>
+      <text x="0" y="38" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Problem vs Solution</text>
+      <text x="0" y="56" font-family="system-ui, sans-serif" font-size="11" fill="#475569">How It Works</text>
+      <text x="0" y="74" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Continuity Engine</text>
+    </g>
+    <g transform="translate(750, 0)">
+      <text x="0" y="16" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0F172A">WORKSPACE</text>
+      <text x="0" y="38" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Dashboard</text>
+      <text x="0" y="56" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Shifts &amp; Handovers</text>
+      <text x="0" y="74" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Tasks &amp; Incidents</text>
+    </g>
+    <g transform="translate(1000, 0)">
+      <text x="0" y="16" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0F172A">COMPLIANCE</text>
+      <text x="0" y="38" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Yuva Intern Frontend Week 5</text>
+      <text x="0" y="56" font-family="system-ui, sans-serif" font-size="11" fill="#475569">Single Page Application Standard</text>
+      <text x="0" y="74" font-family="system-ui, sans-serif" font-size="11" fill="#475569">No External Framework Bloat</text>
+    </g>
+  </g>
+</svg>

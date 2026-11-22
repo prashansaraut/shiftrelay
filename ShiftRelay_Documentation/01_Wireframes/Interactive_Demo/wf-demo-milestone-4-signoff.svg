@@ -1,0 +1,135 @@
+<svg width="1280" height="900" viewBox="0 0 1280 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1280" height="900" fill="#F8FAFC" />
+
+    <!-- Top Demo Navigation -->
+    <rect width="1280" height="64" fill="#FFFFFF" stroke="#E2E8F0" />
+    <g transform="translate(40, 18)">
+      <circle cx="14" cy="14" r="12" fill="#E2E8F0" stroke="#0F172A" stroke-width="1.5" />
+      <text x="36" y="19" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#0F172A">ShiftRelay</text>
+      <rect x="135" y="2" width="130" height="24" rx="12" fill="#FEF3C7" />
+      <text x="148" y="18" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#92400E">Interactive Sandbox</text>
+      
+      <!-- Right Action Controls -->
+      <g transform="translate(900, 0)">
+        <rect x="0" y="0" width="80" height="30" rx="4" fill="#FFFFFF" stroke="#CBD5E1" />
+        <text x="18" y="19" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0F172A">Reset</text>
+
+        <rect x="90" y="0" width="130" height="30" rx="4" fill="#0F172A" />
+        <text x="105" y="19" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Open Workspace</text>
+      </g>
+    </g>
+
+    <!-- Stepper Navigation (5 Milestones) -->
+    <g transform="translate(40, 85)">
+      <rect width="1200" height="70" rx="8" fill="#FFFFFF" stroke="#E2E8F0" />
+      
+      <!-- Step 1 -->
+      <g transform="translate(20, 15)">
+        <rect width="215" height="40" rx="6" fill="#F1F5F9" />
+        <circle cx="25" cy="20" r="10" fill="#CBD5E1" />
+        <text x="22" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#475569">1</text>
+        <text x="45" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#475569">Inspect Queue</text>
+      </g>
+
+      <!-- Step 2 -->
+      <g transform="translate(260, 15)">
+        <rect width="215" height="40" rx="6" fill="#F1F5F9" />
+        <circle cx="25" cy="20" r="10" fill="#CBD5E1" />
+        <text x="22" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#475569">2</text>
+        <text x="45" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#475569">Draft Handover</text>
+      </g>
+
+      <!-- Step 3 -->
+      <g transform="translate(500, 15)">
+        <rect width="215" height="40" rx="6" fill="#F1F5F9" />
+        <circle cx="25" cy="20" r="10" fill="#CBD5E1" />
+        <text x="22" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#475569">3</text>
+        <text x="45" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#475569">Conflict Simulation</text>
+      </g>
+
+      <!-- Step 4 -->
+      <g transform="translate(740, 15)">
+        <rect width="215" height="40" rx="6" fill="#0F172A" />
+        <circle cx="25" cy="20" r="10" fill="#FFFFFF" />
+        <text x="22" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#0F172A">4</text>
+        <text x="45" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Incoming Sign-Off</text>
+      </g>
+
+      <!-- Step 5 -->
+      <g transform="translate(980, 15)">
+        <rect width="200" height="40" rx="6" fill="#F1F5F9" />
+        <circle cx="25" cy="20" r="10" fill="#CBD5E1" />
+        <text x="22" y="24" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#475569">5</text>
+        <text x="45" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#475569">Continuity Audit</text>
+      </g>
+    </g>
+
+    <!-- Main Milestone Workspace Canvas -->
+    <g transform="translate(40, 180)">
+      <!-- Milestone Header Banner -->
+      <rect width="1200" height="90" rx="8" fill="#FFFFFF" stroke="#E2E8F0" />
+      <g transform="translate(30, 25)">
+        <rect width="110" height="20" rx="10" fill="#E2E8F0" />
+        <text x="15" y="14" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#0F172A">MILESTONE 4 OF 5</text>
+        <text x="125" y="16" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#0F172A">Incoming Shift Sign-Off</text>
+        <text x="0" y="45" font-family="system-ui, sans-serif" font-size="13" fill="#64748B">Incoming supervisor inspects handover payload, verifies safety items, and authorizes custody transfer.</text>
+      </g>
+
+      <!-- Milestone Unique Content -->
+      <g transform="translate(0, 110)">
+        
+  <rect width="1200" height="560" rx="8" fill="#FFFFFF" stroke="#E2E8F0" />
+  <g transform="translate(30, 25)">
+    <text x="0" y="20" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Incoming Shift Custody Acknowledgement: HO-8241</text>
+    <text x="0" y="40" font-family="system-ui, sans-serif" font-size="12" fill="#64748B">Supervisor: Alex Kumar • Evening Shift Lead | Mutual custody transfer verification.</text>
+
+    <!-- Incoming Acceptance Checklist Container -->
+    <rect x="0" y="65" width="1140" height="360" rx="6" fill="#F8FAFC" stroke="#CBD5E1" />
+    <g transform="translate(30, 25)">
+      <text x="0" y="20" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#0F172A">Mutual Custody Verification Checklist</text>
+      
+      <!-- Check 1 -->
+      <g transform="translate(0, 45)">
+        <rect width="20" height="20" rx="4" fill="#0F172A" />
+        <path d="M5 10 L8 14 L15 6" stroke="#FFFFFF" stroke-width="2" fill="none" />
+        <text x="32" y="15" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#0F172A">Inspect Unresolved Outgoing Tasks</text>
+        <text x="32" y="32" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">Verified 3 tasks transitioning to Evening shift; 1 task safely preserved on Night shift.</text>
+      </g>
+
+      <!-- Check 2 -->
+      <g transform="translate(0, 105)">
+        <rect width="20" height="20" rx="4" fill="#0F172A" />
+        <path d="M5 10 L8 14 L15 6" stroke="#FFFFFF" stroke-width="2" fill="none" />
+        <text x="32" y="15" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#0F172A">Acknowledge Active Safety Incidents</text>
+        <text x="32" y="32" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">Reviewed IN-3012 (Cooling Water Valve) and IN-3015 (Lube Oil Purifier). Isolation kits confirmed.</text>
+      </g>
+
+      <!-- Check 3 -->
+      <g transform="translate(0, 165)">
+        <rect width="20" height="20" rx="4" fill="#0F172A" />
+        <path d="M5 10 L8 14 L15 6" stroke="#FFFFFF" stroke-width="2" fill="none" />
+        <text x="32" y="15" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#0F172A">Review Mid-Flight Concurrency Notice</text>
+        <text x="32" y="32" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">Noted 1 conflict alert: TK-8241 reassigned to Night Shift and preserved without overwrite.</text>
+      </g>
+
+      <!-- Check 4 -->
+      <g transform="translate(0, 225)">
+        <rect width="20" height="20" rx="4" fill="#0F172A" />
+        <path d="M5 10 L8 14 L15 6" stroke="#FFFFFF" stroke-width="2" fill="none" />
+        <text x="32" y="15" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#0F172A">Record Formal Custody Handover</text>
+        <text x="32" y="32" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">Alex Kumar accepts operational custody for Evening Shift (14:00 - 22:00).</text>
+      </g>
+    </g>
+
+    <!-- Bottom Action Bar -->
+    <g transform="translate(0, 445)">
+      <rect width="1140" height="50" rx="6" fill="#F1F5F9" stroke="#CBD5E1" />
+      <text x="20" y="30" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#475569">Checklist complete. Authorize shift transfer to lock and execute rollover.</text>
+      <rect x="880" y="8" width="240" height="34" rx="4" fill="#0F172A" />
+      <text x="898" y="30" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Sign &amp; Complete Handover →</text>
+    </g>
+  </g>
+
+      </g>
+    </g>
+  </svg>

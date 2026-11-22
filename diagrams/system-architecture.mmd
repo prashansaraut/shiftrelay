@@ -1,0 +1,40 @@
+graph TB
+  subgraph ClientBrowser ["Client Browser (Vanilla ES-Modules & HTML5)"]
+    DOM["DOM Tree & App Shell (index.html)"]
+    Router["Client-Side Router (js/app.js)"]
+    
+    subgraph ViewLayer ["View / UI Layer (js/views.js)"]
+      Landing["Public Landing Page (landing-view.js)"]
+      Demo["Interactive Sandbox (demo-view.js)"]
+      Workspace["Workspace Controllers (views.js)"]
+    end
+    
+    subgraph StateEngines ["Dual State Engines"]
+      DemoStore["In-Memory Demo Sandbox (demo-store.js)
+(Zero LocalStorage Pollution)"]
+      ProdStore["Production State Manager (store.js)"]
+    end
+    
+    subgraph BusinessCore ["Continuity Engine Core"]
+      Engine["Continuity Engine
+- Item Aggregation (open only)
+- Concurrency Conflict Detection
+- Provenance & Carry Counters
+- closedShift Tracking"]
+    end
+    
+    subgraph Persistence ["Browser LocalStorage"]
+      Storage["Client LocalStorage (shiftrelay.v1)
+(Automatic Legacy Migration from handoverhq.v1)"]
+    end
+  end
+
+  DOM --> Router
+  Router --> Landing
+  Router --> Demo
+  Router --> Workspace
+  Demo --> DemoStore
+  Workspace --> ProdStore
+  ProdStore --> Engine
+  Engine --> ProdStore
+  ProdStore --> Storage

@@ -1,0 +1,106 @@
+<svg width="390" height="1400" viewBox="0 0 390 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="390" height="1400" fill="#FFFFFF" />
+
+  <!-- Mobile Sticky Header -->
+  <rect x="0" y="0" width="390" height="60" fill="#FFFFFF" stroke="#E2E8F0" />
+  <rect x="20" y="18" width="24" height="24" rx="4" fill="#0F172A" />
+  <text x="52" y="35" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#0F172A">ShiftRelay</text>
+  
+  <!-- Theme Toggle -->
+  <rect x="290" y="14" width="36" height="32" rx="6" fill="#F8FAFC" stroke="#E2E8F0" />
+  <circle cx="308" cy="30" r="7" fill="#475569" />
+
+  <!-- Hamburger Menu Icon -->
+  <rect x="336" y="14" width="36" height="32" rx="6" fill="#F8FAFC" stroke="#E2E8F0" />
+  <line x1="346" y1="24" x2="362" y2="24" stroke="#0F172A" stroke-width="2" />
+  <line x1="346" y1="30" x2="362" y2="30" stroke="#0F172A" stroke-width="2" />
+  <line x1="346" y1="36" x2="362" y2="36" stroke="#0F172A" stroke-width="2" />
+
+  <!-- Hero Section -->
+  <g transform="translate(20, 80)">
+    <!-- Pill Badge -->
+    <rect x="0" y="0" width="280" height="28" rx="14" fill="#F1F5F9" stroke="#E2E8F0" />
+    <text x="14" y="18" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#334155">ShiftRelay 2.4 â€” Operational Continuity</text>
+
+    <!-- Main Title -->
+    <text x="0" y="60" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#0F172A">Never drop the</text>
+    <text x="0" y="96" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#0F172A">baton between shifts.</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="130" font-family="system-ui, sans-serif" font-size="13" fill="#64748B">Turn handover blind spots into verifiable operational</text>
+    <text x="0" y="148" font-family="system-ui, sans-serif" font-size="13" fill="#64748B">continuity with mutual sign-offs and preserved IDs.</text>
+
+    <!-- Stacked CTA Buttons -->
+    <rect x="0" y="174" width="350" height="44" rx="8" fill="#0F172A" />
+    <text x="96" y="201" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">â–¶ Explore Interactive Demo</text>
+
+    <rect x="0" y="226" width="350" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" />
+    <text x="122" y="253" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#0F172A">Open Workspace</text>
+
+    <!-- Value Prop Checklist -->
+    <g transform="translate(0, 290)">
+      <text x="24" y="14" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#334155">Original Record ID Preservation</text>
+      <text x="24" y="38" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#334155">Traceable Carry-Forward History</text>
+      <text x="24" y="62" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#334155">Recorded Mutual Sign-Offs</text>
+    </g>
+
+    <!-- Live Product Preview (Mobile Card) -->
+    <g transform="translate(0, 380)">
+      <rect width="350" height="240" rx="8" fill="#F8FAFC" stroke="#E2E8F0" />
+      <rect width="350" height="32" rx="8 8 0 0" fill="#FFFFFF" stroke="#E2E8F0" />
+      <circle cx="16" cy="16" r="4" fill="#CBD5E1" />
+      <circle cx="28" cy="16" r="4" fill="#CBD5E1" />
+      <circle cx="40" cy="16" r="4" fill="#CBD5E1" />
+      <text x="60" y="20" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">shiftrelay.app/app/handover</text>
+      
+      <!-- Mini Handover Preview inside Mobile -->
+      <rect x="16" y="48" width="318" height="60" rx="6" fill="#FFFFFF" stroke="#CBD5E1" />
+      <text x="28" y="70" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#0F172A">Active Handover HO-2026-089</text>
+      <text x="28" y="86" font-family="system-ui, sans-serif" font-size="10" fill="#475569">Shift Alpha â†’ Shift Bravo â€¢ 4 Tasks</text>
+      <rect x="250" y="62" width="70" height="20" rx="4" fill="#0F172A" />
+      <text x="258" y="76" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">IN REVIEW</text>
+
+      <rect x="16" y="120" width="318" height="48" rx="6" fill="#FFFFFF" stroke="#CBD5E1" />
+      <text x="28" y="142" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0F172A">TSK-104: Turbine Seal Inspection</text>
+      <text x="28" y="156" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">Preserved ID â€¢ Carry Counter: 2x</text>
+
+      <rect x="16" y="180" width="318" height="44" rx="6" fill="#0F172A" />
+      <text x="110" y="206" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Mutual Sign-off Complete âœ“</text>
+    </g>
+  </g>
+
+  <!-- Problem vs Solution (Mobile Stacked Cards) -->
+  <g transform="translate(20, 740)">
+    <text x="0" y="20" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#0F172A">The Handover Problem vs ShiftRelay</text>
+
+    <!-- Without ShiftRelay -->
+    <rect x="0" y="36" width="350" height="130" rx="8" fill="#F8FAFC" stroke="#CBD5E1" />
+    <text x="16" y="60" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Without ShiftRelay</text>
+    <text x="16" y="80" font-family="system-ui, sans-serif" font-size="11" fill="#475569">â€¢ Lost verbal notes and scattered chat messages</text>
+    <text x="16" y="98" font-family="system-ui, sans-serif" font-size="11" fill="#475569">â€¢ New duplicate tickets created each shift</text>
+    <text x="16" y="116" font-family="system-ui, sans-serif" font-size="11" fill="#475569">â€¢ Zero verifiable sign-off accountability</text>
+
+    <!-- With ShiftRelay -->
+    <rect x="0" y="178" width="350" height="130" rx="8" fill="#F1F5F9" stroke="#0F172A" stroke-width="1.5" />
+    <text x="16" y="202" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0F172A">With ShiftRelay Continuity Engine</text>
+    <text x="16" y="222" font-family="system-ui, sans-serif" font-size="11" fill="#0F172A">âœ“ Single persistent ID across infinite shifts</text>
+    <text x="16" y="240" font-family="system-ui, sans-serif" font-size="11" fill="#0F172A">âœ“ Carry-forward counters track aging risks</text>
+    <text x="16" y="258" font-family="system-ui, sans-serif" font-size="11" fill="#0F172A">âœ“ Bilateral cryptographic-style mutual sign-offs</text>
+  </g>
+
+  <!-- Mobile Footer -->
+  <g transform="translate(20, 1100)">
+    <rect x="0" y="0" width="350" height="260" rx="8" fill="#0F172A" />
+    <text x="24" y="36" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">ShiftRelay</text>
+    <text x="24" y="56" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8">Operational Continuity System</text>
+
+    <text x="24" y="90" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">NAVIGATION</text>
+    <text x="24" y="110" font-family="system-ui, sans-serif" font-size="11" fill="#CBD5E1">Interactive Demo</text>
+    <text x="24" y="128" font-family="system-ui, sans-serif" font-size="11" fill="#CBD5E1">Operational Workspace</text>
+    <text x="24" y="146" font-family="system-ui, sans-serif" font-size="11" fill="#CBD5E1">Documentation &amp; Specs</text>
+
+    <line x1="24" y1="180" x2="326" y2="180" stroke="#334155" />
+    <text x="24" y="210" font-family="system-ui, sans-serif" font-size="10" fill="#94A3B8">Â© 2026 ShiftRelay. Built for 24/7 Operations.</text>
+    <text x="24" y="226" font-family="system-ui, sans-serif" font-size="10" fill="#94A3B8">Yuva Internship Evaluation Project.</text>
+  </g>
+</svg>

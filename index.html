@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ShiftRelay — Shift Continuity System</title>
+  <!-- Favicon using SVG relay mark -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M7 16C7 11 11 7 16 7c2.6 0 4.9 1.1 6.5 2.9' stroke='%232563eb' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3Cpath d='M25 16c0 5-4 9-9 9-2.6 0-4.9-1.1-6.5-2.9' stroke='%23059669' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3Crect x='13.2' y='8' width='5.6' height='16' rx='2.8' transform='rotate(30 16 16)' fill='%23d97706'/%3E%3Ccircle cx='11.5' cy='11.5' r='2' fill='%232563eb'/%3E%3Ccircle cx='20.5' cy='20.5' r='2' fill='%23059669'/%3E%3C/svg%3E">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+</head>
+<body class="public-mode">
+  <!-- Operational Sidebar (Visible on /app/* routes) -->
+  <aside id="side" aria-label="Main navigation">
+    <div class="brand" id="sideBrand">
+      <a href="/" data-link class="sr-side-brand-link">
+        <svg class="sr-logo-icon" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 16C7 11.0294 11.0294 7 16 7C18.6 7 20.9 8.1 22.5 9.9" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+          <path d="M25 16C25 20.9706 20.9706 25 16 25C13.4 25 11.1 23.9 9.5 22.1" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+          <rect x="13.2" y="8" width="5.6" height="16" rx="2.8" transform="rotate(30 16 16)" fill="#F59E0B"/>
+          <circle cx="11.5" cy="11.5" r="2.2" fill="#3B82F6"/>
+          <circle cx="20.5" cy="20.5" r="2.2" fill="#10B981"/>
+        </svg>
+        <span class="sr-brand-label">Shift<span class="sr-accent">Relay</span></span>
+      </a>
+    </div>
+
+    <nav aria-label="Workspace links">
+      <a href="/app/dashboard" data-link><i data-lucide="layout-dashboard"></i><span>Dashboard</span></a>
+      <a href="/app/shifts" data-link><i data-lucide="clock"></i><span>Shifts</span></a>
+      <a href="/app/handovers" data-link><i data-lucide="arrow-left-right"></i><span>Handovers</span></a>
+      <a href="/app/tasks" data-link><i data-lucide="clipboard-list"></i><span>Tasks</span></a>
+      <a href="/app/incidents" data-link><i data-lucide="alert-triangle"></i><span>Incidents</span></a>
+      <a href="/app/activity" data-link><i data-lucide="history"></i><span>Activity</span></a>
+      <a href="/app/settings" data-link><i data-lucide="settings"></i><span>Settings</span></a>
+    </nav>
+
+    <div class="sr-side-footer">
+      <div class="sr-side-shortcuts">
+        <a href="/demo" data-link class="sr-side-sublink"><i data-lucide="play-circle"></i><span>Interactive Demo</span></a>
+        <a href="/" data-link class="sr-side-sublink"><i data-lucide="home"></i><span>Public Page</span></a>
+      </div>
+      <p class="tag">Every shift connected. Nothing left behind.</p>
+    </div>
+  </aside>
+
+  <div id="scrim"></div>
+
+  <!-- Main View Container -->
+  <div id="main">
+    <header class="top" id="topBar">
+      <button class="icon-btn" id="menu" aria-label="Toggle navigation"><i data-lucide="menu"></i></button>
+      <form id="gsearch" role="search">
+        <i data-lucide="search"></i>
+        <input name="q" type="search" placeholder="Search tasks, incidents, handovers, shifts..." aria-label="Global search">
+      </form>
+      <div class="sr-topbar-right">
+        <!-- Theme Toggle Button -->
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <i data-lucide="moon" id="themeIcon"></i>
+        </button>
+
+        <a href="/demo" data-link class="sr-quick-link"><i data-lucide="play-circle"></i> Demo</a>
+
+        <!-- Workspace Profile Menu -->
+        <div class="sr-profile-menu-container" id="srProfileMenu">
+          <button class="sr-profile-trigger" id="srProfileTrigger" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Profile and simulated role menu">
+            <span class="sr-avatar-badge" id="srAvatarInitials">PN</span>
+            <div class="sr-profile-trigger-info">
+              <span class="sr-profile-name" id="srProfileName">Priya Nair</span>
+              <span class="role" id="roleTag">Operations Manager</span>
+            </div>
+            <i data-lucide="chevron-down" class="sr-chevron-icon"></i>
+          </button>
+
+          <!-- Dropdown Popover -->
+          <div class="sr-profile-dropdown" id="srProfileDropdown" hidden>
+            <div class="sr-dropdown-header">
+              <div class="sr-dropdown-user">
+                <span class="sr-avatar-lg" id="srAvatarLg">PN</span>
+                <div>
+                  <div class="sr-dropdown-name" id="srDropdownName">Priya Nair</div>
+                  <div class="sr-dropdown-role" id="srDropdownRole">Operations Manager</div>
+                </div>
+              </div>
+              <div class="sr-sim-notice">
+                <i data-lucide="alert-triangle"></i>
+                <span>Simulated Profile • Demo Mode (No real accounts)</span>
+              </div>
+            </div>
+
+            <div class="sr-dropdown-section">
+              <div class="sr-dropdown-label">Switch Simulated Role</div>
+              <div class="sr-role-options">
+                <button type="button" class="sr-role-btn" data-switch-role="Operations Manager">
+                  <i data-lucide="user-check"></i>
+                  <div>
+                    <strong>Operations Manager</strong>
+                    <small>Full facility oversight &amp; approvals</small>
+                  </div>
+                </button>
+                <button type="button" class="sr-role-btn" data-switch-role="Outgoing Shift Employee">
+                  <i data-lucide="log-out"></i>
+                  <div>
+                    <strong>Outgoing Shift Lead</strong>
+                    <small>Prepares handovers &amp; logs anomalies</small>
+                  </div>
+                </button>
+                <button type="button" class="sr-role-btn" data-switch-role="Incoming Shift Employee">
+                  <i data-lucide="log-in"></i>
+                  <div>
+                    <strong>Incoming Shift Lead</strong>
+                    <small>Reviews &amp; acknowledges shift batons</small>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <div class="sr-dropdown-footer">
+              <a href="/app/settings" data-link class="sr-dropdown-action">
+                <i data-lucide="sliders"></i>
+                <span>Preferences &amp; Settings</span>
+              </a>
+              <button type="button" class="sr-dropdown-action" id="srAboutBtn">
+                <i data-lucide="help-circle"></i>
+                <span>About ShiftRelay</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="contentArea">
+      <div class="pagehead" id="pageHead">
+        <div>
+          <div id="crumb" class="muted"></div>
+          <h1 id="title"></h1>
+        </div>
+        <div id="actions" class="row"></div>
+      </div>
+      <div id="view"></div>
+    </main>
+  </div>
+
+  <div id="toasts" aria-live="polite"></div>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
